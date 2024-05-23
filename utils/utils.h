@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/19 20:43:51 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/23 17:34:35 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int is_digit(char *s);
 // BASICS
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
+char	**ft_split(char const *s, char c);
 
 // PRINTF
 int		ft_printf(char const *format, ...);

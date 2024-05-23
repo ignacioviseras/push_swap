@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/19 16:19:08 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/23 17:12:48 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@
 # include <stdlib.h>
 
 
-typedef struct s_list
+typedef struct s_stack
 {
-	void			*content;
-	struct s_list	*next;
-}			t_list;
+	int				value;
+	int				pos;
+	struct s_stack	*prev;
+	struct s_stack	*next;
+}			t_stack;
+
+
+void init_stack(t_stack *a, t_stack *b, char **num);
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 19:20:46 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/19 20:43:34 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/23 17:06:35 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,11 @@ int is_digit(char *s) {
     len_agv = ft_strlen(s);
     while (s[len_agv] != '\0')
     {
+        if (s[len_agv] == '-' || s[len_agv] == '+')
+            len_agv++;
         if (!s[len_agv] >= '0' && !s[len_agv] <= '9')
             return(1);//no es digito
+        len_agv++;
     }
     return (0);
 }
