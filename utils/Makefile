@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:42:22 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/25 19:03:20 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/25 19:29:53 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,12 +24,13 @@ BASICS_SRC		=	ft_atoi.c \
 					ft_strlen.c \
 					free_all.c \
 					ft_split.c \
-					ft_bzero.c\
-					ft_calloc.c\
-					ft_memset.c\
-					ft_strchr.c\
-					ft_strlcpy.c\
-					ft_substr.c\
+					ft_bzero.c \
+					ft_calloc.c \
+					ft_memset.c \
+					ft_strchr.c \
+					ft_strjoin.c \
+					ft_strlcpy.c \
+					ft_substr.c \
 
 PRINTF_SRC		=	ft_printf.c \
 					ft_printNumbers.c \

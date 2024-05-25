@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/25 18:40:51 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/25 19:30:59 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,24 @@ void error()
 int validate_params(char **nums, int n)
 {
     int x;
+    char *values:
 
     x = 1;
-    while (x > n - 1)
+    while (x < n - 1)
     {
-        nums = ft_split(nums[x], ' ');
-        if (is_digit(nums[x]) != 0) // contorl de ascii para numeros
-            error();
+        if (!ft_strchr(nums[x], ' '))
+        {
+            values = 
+            /* code */
+        }
+        else
+        {
+            nums = ft_split(nums[x], ' ');
+            if (is_digit(nums[x]) != 0) // contorl de ascii para numeros
+                error();
+        }
         x++;
     }
-    //  
-    
     return (0);
 }
 
@@ -47,9 +54,12 @@ void init_stack(t_stack *a, t_stack *b, char **num, int n_num)
         error();
 }
 
+/*
+#####################################
+añadir -Werror al makefile
+#####################################
 
-
-
+*/
 int main(int argc, char **argv)
 {
 
