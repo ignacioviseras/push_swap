@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   free_all.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/25 19:00:19 by igvisera         ###   ########.fr       */
+/*   Created: 2024/02/20 20:44:45 by igvisera          #+#    #+#             */
+/*   Updated: 2024/03/22 19:13:19 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../utils.h"
 
-# include "./utils/utils.h"
-# include <stdlib.h>
-
-
-typedef struct s_stack
+void	free_all(void **str)
 {
-	int				value;
-	int				pos;
-	struct s_stack	*prev;
-	struct s_stack	*next;
-}			t_stack;
+	void	**pointer_pos;
 
-
-void init_stack(t_stack *a, t_stack *b, char **num, int n_num);
-void error();
-
-#endif
+	pointer_pos = str;
+	while (*str)
+	{
+		free(*str);
+		str++;
+	}
+	free(pointer_pos);
+}

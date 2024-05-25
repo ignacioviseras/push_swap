@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/23 17:34:35 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/25 19:03:03 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 # include <stdlib.h>
 # include "stdarg.h"
 # include <unistd.h>
+# include <stdint.h>
 
 
 // SRC
@@ -32,7 +33,16 @@ int is_digit(char *s);
 // BASICS
 int		ft_atoi(const char *nptr);
 size_t	ft_strlen(const char *s);
+void	free_all(void **str);
 char	**ft_split(char const *s, char c);
+void	ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_memset(void *s, int c, size_t n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+size_t	ft_strlcpy(char *dst, char *src, size_t size);
+
 
 // PRINTF
 int		ft_printf(char const *format, ...);

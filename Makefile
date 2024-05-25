@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/19 17:04:21 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/25 19:02:26 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,10 +36,12 @@ $(UTILS):
 	$(MAKE) -C $(UTILS_SRC)
 
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(UTILS_OBJS)
+	$(MAKE) -C $(UTILS_SRC) clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -C $(UTILS_SRC) fclean
 
 re: fclean all
 
