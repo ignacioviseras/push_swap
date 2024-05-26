@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/25 19:29:19 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/26 19:44:16 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,12 @@ void	free_all(void **str);
 char	**ft_split(char const *s, char c);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+int		ft_isdigit(int c);
 void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+int		ft_strcmp(const char *s1, const char *s2);
+char	*ft_strdup(const char *s);
 char	*ft_strjoin(char *s1, const char *s2);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
 

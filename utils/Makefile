@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
+#    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:42:22 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/25 19:29:53 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/26 19:44:35 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,14 @@ BASICS_SRC		=	ft_atoi.c \
 					ft_split.c \
 					ft_bzero.c \
 					ft_calloc.c \
+					ft_isdigit.c \
 					ft_memset.c \
 					ft_strchr.c \
 					ft_strjoin.c \
 					ft_strlcpy.c \
 					ft_substr.c \
+					ft_strcmp.c \
+					ft_strdup.c \
 
 PRINTF_SRC		=	ft_printf.c \
 					ft_printNumbers.c \

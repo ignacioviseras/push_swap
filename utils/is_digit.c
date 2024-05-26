@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 19:20:46 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/25 19:03:54 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/26 19:45:51 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./utils.h"
 
-int is_digit(char *s) {
-    int len_agv;
+int is_digit(char *s)
+{
+    int x;
     
-    len_agv = ft_strlen(s);
-    while (s[len_agv] != '\0')
+    x = 0;
+    while (s[x] != '\0')
     {
-        if (s[len_agv] == '-' || s[len_agv] == '+')
-            len_agv++;
-        if (!(s[len_agv] >= '0') && !(s[len_agv] <= '9'))
+        if (s[x] == '-' || s[x] == '+' || s[x] == ' ')
+            x++;
+        if (ft_isdigit(s[x]) == 0)
             return(1);//no es digito
-        len_agv++;
+        x++;
     }
     return (0);
 }
