@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/26 12:34:01 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/28 15:53:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_stack
 {
 	int				value;
 	int				pos;
-	struct s_stack	*prev;
 	struct s_stack	*next;
 }			t_stack;
 
