@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/29 20:56:46 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:07:41 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,60 +17,6 @@ void error()
     ft_printf("Error\n");
     exit(1);
 }
-
-// char *load_params(char **nums, int n)
-// {
-//     char    *str;
-//     // char    *temp;
-//     char    *aux;
-//     int     x;
-
-//     x = 1;
-//     str = ft_strdup(nums[1]);
-//     if (!str)
-//         return (free(str), NULL);
-//     while (x < n)
-//     {
-//         // if (str)
-//         // {
-//         //     aux = ft_strjoin(str, " ");
-//         //     free(str);
-//         //     str = ft_strjoin(aux, nums[x]);
-//         // }
-//         // else
-//         // {
-//         //     str = ft_strjoin(" ", nums[x]);
-//         // }
-//         if (str) 
-//         {
-//             //21 
-//             str = ft_strjoin(" ", nums[x]);
-//         }
-//         else
-//         {
-//             str = ft_strjoin(nums[x], " ");
-//             aux = str;
-//             // free(str);
-//         }
-//         if (!str)
-//             return (NULL);
-//         x++;
-//     }
-//     return (str);
-// }
-
-// int parse_int(char *str)
-// {
-//     long num;
-
-
-//     num = ft_atoi(str);
-//     if (num >= -2147483648 && 2147483647 <= num)
-//     {
-
-//     }
-//     return (num);
-// }
 
 void init_stack(t_stack **a, char **num, int n_num)
 {
@@ -101,14 +47,6 @@ void init_stack(t_stack **a, char **num, int n_num)
     }
 }
 
-
-// while (a->next != NULL)
-    // {
-        // value = parse_int(str_splited[x]);
-        // stack_create(ft_atoi(str_splited[x]));
-        // a = a->next;
-    // }
-
 /*
     ##################################
         añadir -Werror al makefile
@@ -117,17 +55,14 @@ void init_stack(t_stack **a, char **num, int n_num)
 int main(int argc, char **argv)
 {
     t_stack *a;
-    // t_stack *b;
+    t_stack *b;
 
     a = NULL;
-    // b = NULL;
+    b = NULL;
     if (argc < 2)
         error();
     else
     {
-        // a = malloc(sizeof(t_stack));
-        // if (!a)
-        //     return (0);
         init_stack(&a, argv, argc);
         print_stack(a);
         free_stack(a);
