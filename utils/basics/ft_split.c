@@ -12,7 +12,7 @@
 
 #include "../utils.h"
 
-static int	n_words(char const *s, char c)
+int	n_words(char const *s, char c)
 {
 	int	words;
 	int	index;

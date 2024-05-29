@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/27 00:06:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:17:00 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,82 +18,126 @@ void error()
     exit(1);
 }
 
-char *load_params(char **nums, int n)
-{
-    char    *str;
-    char    *temp;
-    char    *aux;
-    int     x;
+// char *load_params(char **nums, int n)
+// {
+//     char    *str;
+//     // char    *temp;
+//     char    *aux;
+//     int     x;
 
-    x = 2;
-    str = ft_strdup(nums[1]);
-    temp = ft_strdup(" ");
-    if (!str || !temp)
-        return (free(str), free(temp), NULL);
-    while (x < n)
+//     x = 1;
+//     str = ft_strdup(nums[1]);
+//     if (!str)
+//         return (free(str), NULL);
+//     while (x < n)
+//     {
+//         // if (str)
+//         // {
+//         //     aux = ft_strjoin(str, " ");
+//         //     free(str);
+//         //     str = ft_strjoin(aux, nums[x]);
+//         // }
+//         // else
+//         // {
+//         //     str = ft_strjoin(" ", nums[x]);
+//         // }
+//         if (str) 
+//         {
+//             //21 
+//             str = ft_strjoin(" ", nums[x]);
+//         }
+//         else
+//         {
+//             str = ft_strjoin(nums[x], " ");
+//             aux = str;
+//             // free(str);
+//         }
+//         if (!str)
+//             return (NULL);
+//         x++;
+//     }
+//     return (str);
+// }
+
+// int parse_int(char *str)
+// {
+//     long num;
+
+
+//     num = ft_atoi(str);
+//     if (num >= -2147483648 && 2147483647 <= num)
+//     {
+
+//     }
+//     return (num);
+// }
+
+void init_stack(t_stack **a, char **num, int n_num)
+{
+    int x;
+    int i;
+    int size;
+    char **str_splited;
+    // char *str;
+
+    x = 1;
+    i = 0;
+    while (x < n_num)
     {
-        aux = ft_strjoin(temp, nums[x]);
-        free(temp);
-        temp = aux;
-        if (!temp)
-            return (free(str), NULL);
-        aux = ft_strjoin(str, temp);
-        free(str);
-        str = aux;
-        if (!str)
-            return (free(temp), NULL);
+        size = n_words(num[x], ' ');
+        str_splited = ft_split(num[x], ' ');
+        while (i < size)
+        {
+            if (is_digit(str_splited[i]) == 1)// NO es digito
+            {
+                free_all((void **)str_splited);
+                free_stack(*a);
+                //liberar la lista entera y cerrar programa
+                error();
+            }
+            else
+            {
+                stack_add_bottom(a, stack_create(ft_atoi(str_splited[i])));
+                i++;
+            }
+        }
         x++;
     }
-    return (free(temp), str);
+    free_all((void **)str_splited);
+    // free(str);//hay q liberar str para no tener fugas
 }
 
-void init_stack(t_stack *a, t_stack *b, char **num, int n_num)
-{
-    //
-    char *str;
-    char **str_splited;
 
-    str = load_params(num, n_num);
-    if (is_digit(str) == 1)
-    {
-        free(str);
-        error();
-    }
-    printf("valido???\n");
-    // str_splited = ft_split(str, ' ');
-    free(str);//hay q liberar str para no tener fugas
-
-    // else
+// while (a->next != NULL)
     // {
-    //     free(str);
+        // value = parse_int(str_splited[x]);
+        // stack_create(ft_atoi(str_splited[x]));
+        // a = a->next;
     // }
-}
 
 /*
-#####################################
-añadir -Werror al makefile
-#####################################
-
+    ##################################
+        añadir -Werror al makefile
+    ##################################
 */
 int main(int argc, char **argv)
 {
-    // 123 1 23 1  23 123 123 123  123
-    // "23 34 235 4567568 86 "
-    // "1 2 3 4" "5 6 7 " 8 9  asdsad jgfh   10 "-1 3 3 54"
+    t_stack *a;
+    // t_stack *b;
 
-    t_stack a;
-    t_stack b;
-
-    // a = NULL;
+    a = NULL;
     // b = NULL;
     if (argc < 2)
         exit(1);
     else
     {
-        init_stack(&a, &b, argv, argc);
-
+        // a = malloc(sizeof(t_stack));
+        // if (!a)
+        //     return (0);
+        init_stack(&a, argv, argc);
+        print_stack(a);
+        free_stack(a);
     }    
-    
     ft_printf("num de params '%d'\n", argc);
     ft_printf("param '%s'\n", argv[1]);
     ft_printf("accedo\n");

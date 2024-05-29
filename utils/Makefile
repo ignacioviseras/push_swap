@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:42:22 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/26 19:44:35 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/29 20:57:19 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ SRCS			=	is_digit.c \
 
 BASICS_SRC		=	ft_atoi.c \
 					ft_strlen.c \
-					free_all.c \
 					ft_split.c \
 					ft_bzero.c \
 					ft_calloc.c \

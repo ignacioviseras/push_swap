@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/26 19:44:16 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/29 19:25:45 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,19 @@
 
 # include <stdlib.h>
 # include "stdarg.h"
+# include "../push_swap.h"
 # include <unistd.h>
 # include <stdint.h>
-
+# include <limits.h>
 
 // SRC
 int is_digit(char *s);
 
 // BASICS
-int		ft_atoi(const char *nptr);
+int	ft_atoi(char *nptr);
 size_t	ft_strlen(const char *s);
 void	free_all(void **str);
+int	n_words(char const *s, char c);
 char	**ft_split(char const *s, char c);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);

@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/28 16:04:59 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/29 21:04:48 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,24 @@ t_stack *stack_create(int value)
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
 		return (NULL);
-
 	stack->value = value;
 	stack->pos = 0;
 	stack->next = NULL;
 	return (stack);
 }
 
-
 void stack_add_bottom(t_stack **stack, t_stack *new_stack)
 {
-	t_stack	*iter;
-
-	if (stack)
+	if (!*stack)
+		*stack = new_stack;
+	else
 	{
-		if (*stack)
-		{
-			iter = *stack;
-			while (iter->next != NULL)
-				iter = iter->next;
-			iter->next = new_stack;
-		}
-		else
-			*stack = new_stack;
+		t_stack	*iter;
+
+		iter = *stack;
+		while (iter->next != NULL)
+			iter = iter->next;
+		iter->next = new_stack;
 	}
 }
 
@@ -70,7 +65,7 @@ int get_size(t_stack *stack)
 	int size;
 
 	if (!stack)
-		return (NULL);	
+		return (0);	
 	while (stack->next != NULL)
 	{
 		size++;

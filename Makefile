@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
+#    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/25 19:06:38 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/29 20:57:37 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ UTILS_OBJS	=	$(addprefix $(UTILS_SRC), *.o)
 UTILS     	=	$(addprefix $(UTILS_SRC), $(UTILS_A))
 
 SRCS		=	push_swap.c \
+				stack_actions.c \
+				debug.c \
+				frees.c \
 				# push_swap_utils.c \
 
 
