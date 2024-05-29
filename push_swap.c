@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/29 21:17:00 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:56:46 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,33 +78,27 @@ void init_stack(t_stack **a, char **num, int n_num)
     int i;
     int size;
     char **str_splited;
-    // char *str;
 
     x = 1;
-    i = 0;
     while (x < n_num)
     {
         size = n_words(num[x], ' ');
         str_splited = ft_split(num[x], ' ');
-        while (i < size)
+        i = -1;
+        while (++i < size)
         {
             if (is_digit(str_splited[i]) == 1)// NO es digito
             {
                 free_all((void **)str_splited);
                 free_stack(*a);
-                //liberar la lista entera y cerrar programa
                 error();
             }
             else
-            {
                 stack_add_bottom(a, stack_create(ft_atoi(str_splited[i])));
-                i++;
-            }
         }
         x++;
+        free_all((void **)str_splited);
     }
-    free_all((void **)str_splited);
-    // free(str);//hay q liberar str para no tener fugas
 }
 
 
@@ -128,7 +122,7 @@ int main(int argc, char **argv)
     a = NULL;
     // b = NULL;
     if (argc < 2)
-        exit(1);
+        error();
     else
     {
         // a = malloc(sizeof(t_stack));
