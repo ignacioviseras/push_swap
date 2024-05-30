@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/29 20:57:37 by igvisera         ###   ########.fr        #
+#    Updated: 2024/05/30 18:58:38 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,8 +22,12 @@ UTILS     	=	$(addprefix $(UTILS_SRC), $(UTILS_A))
 
 SRCS		=	push_swap.c \
 				stack_actions.c \
-				debug.c \
 				frees.c \
+				push_stack.c \
+				debug.c \
+				# rotate_stack.c \
+				# reverse_rotate_stack.c \
+				# swap_stack.c \
 				# push_swap_utils.c \
 
 

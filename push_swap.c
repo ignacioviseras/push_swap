@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/29 21:22:26 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:11:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,47 +30,33 @@ void error()
         ----  Movimientos  ----
         Swap
             sa -> swap a
-                -
+                - pillas los 2 primeros elementos de A y los cambias (1 -> 2) y (2 -> 1)
             sb -> swap a
-                -
+                - pillas los 2 primeros elementos de A y los cambias (1 -> 2) y (2 -> 1
             ss -> sa y sb (a la vez)
-                -
+                - Haces sa y sb al mismo tiempo
         Push
             pa -> push a
-                -
+                - mandas 1 elemento al stack B
             pb -> push b
-                -
+                - mandas 1 elemento al stack A
         Rotate
             ra -> rotate a
-                -
+                - pilla el PRIMER elemento de A y lo pone en la base
             rb -> rotate b
-                -
+                - pilla el PRIMER elemento de B y lo pone en la base
             rr -> ra y rb (a la vez)
-                -
+                - Haces ra y rb al mismo tiempo
         Reverse Rotate
             rra -> reverse rotate a
-                -
+                - Pillas el ULTIMO elemento de A y lo pones arriba del todo
             rrb -> reverse rotate b
-                -
+                - Pillas el ULTIMO elemento de B y lo pones arriba del todo
             rrr -> rra y rrb (a la vez)
-                -
+                - Haces rra y rrb al mismo timepo
     4.
     5.
-    6.
-    7.
-    8.
-    9.
-    10.
-    11.
-    12.
-    13.
-    14.
-    15.
-    16.
-    17.
-    18.
-    19.
-    20.
+
 */
 
 
@@ -120,6 +106,8 @@ int main(int argc, char **argv)
     else
     {
         init_stack(&a, argv, argc);
+        pb(&a, &b);
+        pa(&a, &b);
         print_stack(a);
         free_stack(a);
     }    
