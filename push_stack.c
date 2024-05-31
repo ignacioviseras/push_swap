@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:58:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/30 19:26:11 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:44:42 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void pa(t_stack **a, t_stack **b)
 {
 	if (!*b)//hay q cerrar pq no puedes mandar cosas de b si no existe
 	{
-
+		stack_add_bottom(*a, stack_create(*b));
+		
 	}
 	else
 	{

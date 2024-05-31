@@ -6,12 +6,11 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/29 21:04:48 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:44:44 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
-
 
 t_stack *stack_create(int value)
 {
