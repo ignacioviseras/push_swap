@@ -6,33 +6,46 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:58:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/05/30 20:44:42 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/01 22:03:17 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
 
+void stack_push(t_stack **stack, t_stack *new_node)
+{
+	if (!stack || !new_node)
+		return ;
+	new_node->next = *stack;
+	*stack = new_node;
+}
+
+t_stack *delete_node(t_stack **stack)
+{
+	if (!stack || !*stack)
+		return NULL;
+	t_stack *top_node;
+	top_node = *stack;
+	*stack = top_node->next;
+	top_node->next = NULL;
+	return (top_node);
+}
+
 void pa(t_stack **a, t_stack **b)
 {
-	if (!*b)//hay q cerrar pq no puedes mandar cosas de b si no existe
-	{
-		stack_add_bottom(*a, stack_create(*b));
-		
-	}
-	else
-	{
-
-	}
+	if (!b || !*b)
+		return ;
+	t_stack *top_of_b;
+	top_of_b = delete_node(b);
+	stack_push(a, top_of_b);
 }
 
 void pb(t_stack **a, t_stack **b)
 {
-	if (!*b)//si no existe lo creo y le añado los datos
-	{
-
-	}
-	else
-	{
-		
-	}
+	if (!a || !*a)
+		return ;
+	t_stack *top_of_a;
+	top_of_a = delete_node(a);
+	stack_push(b, top_of_a);
 }
+
