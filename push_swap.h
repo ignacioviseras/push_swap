@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/03 23:19:09 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:41:31 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void ra(t_stack **a);
 
 // reverse rotate
 void rra(t_stack **a);
-
+void rrr(t_stack **a, t_stack **b);
 // swap
 
 //DEBUGG

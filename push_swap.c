@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/03 23:21:19 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/04 00:00:25 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void init_stack(t_stack **a, char **num, int n_num)
 
 /*
     ##################################
-        añadir -Werror al makefile
+    #   añadir -Werror al makefile   #
     ##################################
 */
 int main(int argc, char **argv)
@@ -110,6 +110,9 @@ int main(int argc, char **argv)
         print_stack(b);
         printf("\n\n***PB***\n");
         pb(&a, &b);
+        pb(&a, &b);
+        pb(&a, &b);
+        pb(&a, &b);
         printf("----- A -----\n");
         print_stack(a);
         printf("----- B -----\n");
@@ -120,15 +123,23 @@ int main(int argc, char **argv)
         print_stack(a);
         printf("----- B -----\n");
         print_stack(b);
-        printf("\n\n***ra***\n");
-        ra(&a);
+        // printf("\n\n***ra***\n");
+        // ra(&a);
+        // print_stack(a);
+        // printf("\n\n***rra***\n");
+        // rra(&a);
+        // rra(&a);
+        // rra(&a);
+        // print_stack(a);
+
+        printf("\n\n***rrr***\n");
+        rrr(&a ,&b);
+        printf("----- A -----\n");
         print_stack(a);
-        printf("\n\n***rra***\n");
-        rra(&a);
-        rra(&a);
-        rra(&a);
-        print_stack(a);
+        printf("----- B -----\n");
+        print_stack(b);
         free_stack(a);
+        free_stack(b);
     }    
     ft_printf("num de params '%d'\n", argc);
     ft_printf("param '%s'\n", argv[1]);

@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:53:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/03 23:04:56 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/04 00:06:37 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,14 +97,51 @@ void rra(t_stack **a)
     *a = last;
 }
 
+void rrr(t_stack **a, t_stack **b)
+{
+	// if (!a || !(*a) || !(*a)->next)
+    //     return;
+	// if (!b || !(*b) || !(*b)->next)
+    //     return;
+    // t_stack *last_a;
+    // t_stack *last_b;
+    // t_stack *second_last_a;
+    // t_stack *second_last_b;
 
+    // last_a = get_last(*a);
+	// last_b = get_last(*b);
+    // second_last_a = *a;
+    // second_last_b = *b;
+    // while (second_last_a->next->next != NULL)
+    //     second_last_a = second_last_a->next;
+    // while (second_last_b->next->next != NULL)
+    //     second_last_b = second_last_b->next;
+    // second_last_a->next = NULL;    	// Apuntamos el último nodo al primer nodo original de la pila
+	// second_last_b->next = NULL;		// Apuntamos el último nodo al primer nodo original de la pila
+    // last_a->next = *a;    			// El último nodo se convierte en el nuevo tope de la pila
+    // last_b->next = *b;    			// El último nodo se convierte en el nuevo tope de la pila
+    // *a = last_a;
+    // *b = last_b;
+	if ((!a || !(*a) || !(*a)->next) && (!b || !(*b) || !(*b)->next))
+        return;
 
-// void rb()
-// {
+    if (a && *a && (*a)->next) {
+        t_stack *last_a = get_last(*a);
+        t_stack *second_last_a = *a;
+        while (second_last_a->next->next != NULL)
+            second_last_a = second_last_a->next;
+        second_last_a->next = NULL;
+        last_a->next = *a;
+        *a = last_a;
+    }
 
-// }
-
-// void rr()
-// {
-
-// }
+    if (b && *b && (*b)->next) {
+        t_stack *last_b = get_last(*b);
+        t_stack *second_last_b = *b;
+        while (second_last_b->next->next != NULL)
+            second_last_b = second_last_b->next;
+        second_last_b->next = NULL;
+        last_b->next = *b;
+        *b = last_b;
+    }
+}
