@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/30 18:58:38 by igvisera         ###   ########.fr        #
+#    Updated: 2024/06/01 23:52:15 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRCS		=	push_swap.c \
 				frees.c \
 				push_stack.c \
 				debug.c \
-				# rotate_stack.c \
+				rotate_stack.c \
 				# reverse_rotate_stack.c \
 				# swap_stack.c \
 				# push_swap_utils.c \

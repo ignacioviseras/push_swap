@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:58:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/02 16:10:45 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:10:10 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void stack_push(t_stack **stack, t_stack *new_node)
 	*stack = new_node;
 }
 
+// cambiar nombre no se entiende mucho lo q haces es 
+// pillar el nodo lo eliminas del stack y lo retornas
+// para q se pueda pushear al otro stack
 t_stack *delete_first_node(t_stack **stack)
 {
 	if (!stack || !*stack)

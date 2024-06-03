@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/01 23:49:49 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:21:19 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,14 @@ int main(int argc, char **argv)
         print_stack(a);
         printf("----- B -----\n");
         print_stack(b);
+        printf("\n\n***ra***\n");
+        ra(&a);
+        print_stack(a);
+        printf("\n\n***rra***\n");
+        rra(&a);
+        rra(&a);
+        rra(&a);
+        print_stack(a);
         free_stack(a);
     }    
     ft_printf("num de params '%d'\n", argc);

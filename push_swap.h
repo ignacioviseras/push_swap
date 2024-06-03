@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/02 16:09:12 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/03 23:19:09 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,20 @@ void				free_all(void **str);
 void				free_stack(t_stack *stack);
 void				error(void);
 
-// ps
+// push
 void stack_push(t_stack **stack, t_stack *new_node);
 t_stack *delete_first_node(t_stack **stack);
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
 
+
+// rotate
+void ra(t_stack **a);
+
+// reverse rotate
+void rra(t_stack **a);
+
+// swap
 
 //DEBUGG
 void				print_stack(t_stack *stack);
