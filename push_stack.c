@@ -6,12 +6,13 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:58:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/02 18:10:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/05 18:48:33 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
 
+// generara erro rsi no existe stack
 void stack_push(t_stack **stack, t_stack *new_node)
 {
 	if (!stack || !new_node)
