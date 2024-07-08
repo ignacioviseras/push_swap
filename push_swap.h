@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/10 22:33:18 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/06/19 22:01:10 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ void				error(void);
 // push
 void stack_push(t_stack **stack, t_stack *new_node);
 t_stack *delete_first_node(t_stack **stack);
+int is_sorted(t_stack *stack);
+
+//push
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
 
