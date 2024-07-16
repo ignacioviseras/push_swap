@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/19 22:01:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/16 19:18:48 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_stack
 }					t_stack;
 
 void				init_stack(t_stack **a, char **num, int n_num);
-t_stack				*stack_create(int value);
+t_stack				*stack_create(int value, int pos);
 void				stack_add_bottom(t_stack **stack, t_stack *new_stack);
 void				stack_add_top(t_stack **stack, t_stack *new_stack);
 t_stack				*get_last(t_stack *stack);
@@ -38,6 +38,9 @@ void				error(void);
 void stack_push(t_stack **stack, t_stack *new_node);
 t_stack *delete_first_node(t_stack **stack);
 int is_sorted(t_stack *stack);
+void stack_sorter(t_stack *a, t_stack *b);
+
+//t_stack stack_sorter(t_stack *a, t_stack *b);
 
 //push
 void pa(t_stack **a, t_stack **b);

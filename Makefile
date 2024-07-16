@@ -26,6 +26,7 @@ SRCS		=	push_swap.c \
 				push_stack.c \
 				debug.c \
 				rotate_stack.c \
+				algorit.c
 				# reverse_rotate_stack.c \
 				# swap_stack.c \
 				# push_swap_utils.c \

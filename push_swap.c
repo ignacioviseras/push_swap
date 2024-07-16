@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/08 21:20:01 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/16 20:43:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@ void error()
     exit(1);
 }
 
+
+void error_digit(char **str_splited, t_stack *a)
+{
+    ft_printf("Error: Use only numbers\n");
+    free_all((void **)str_splited);
+    free_stack(a);
+    exit(1);
+}
 /*
     Reglas:
     1.
@@ -59,26 +67,44 @@ void error()
 
 */
 
-int control_data(char *num, t_stack **stack)
+void    add_number(char *char_num, t_stack **stack, int n)
 {
-    if (is_digit(num) == 1)
-        return (1);
-    while ((*stack)->next != NULL)
-    {
-        if ((*stack)->value == num)//si coincide el numero insertado en el stack retorna 1 q sera error
-            return (1);
+    int num;
+    t_stack **aux;
+    t_stack *top_stack;
+    
+    top_stack = *stack;
+    num = ft_atoi(char_num);
+    if ((*stack) == NULL) {
+        stack_add_bottom(stack, stack_create(num, n));
+        return ;
     }
-    return (0);
+    aux = stack;
+    while ((*aux)->next != NULL)//PUEDE DAR PROBLEMAS?? si no tengo elementos al principio???
+    {
+        if ((*aux)->value == num)//si coincide el numero insertado en el stack retorna 1 q sera error
+        {
+            free_stack(*stack);
+            error();
+        }
+        (*aux) = (*aux)->next;
+    }
+    stack_add_bottom(stack, stack_create(num, n));
+    *stack = top_stack;
+    return ;
 }
+
 
 void init_stack(t_stack **a, char **num, int n_num)
 {
     int x;
     int i;
     int size;
-    char **str_splited;
+    int pos;
+    char **str_splited; 
 
     x = 1;
+    pos = 0;
     while (x < n_num)
     {
         size = n_words(num[x], ' ');
@@ -86,14 +112,12 @@ void init_stack(t_stack **a, char **num, int n_num)
         i = -1;
         while (++i < size)
         {
-            if (control_data(str_splited[i], a) == 1)// NO cumple el control de datos
+            if (is_digit(str_splited[i]) == 1)// NO cumple el control de datos
             {
-                free_all((void **)str_splited);
-                free_stack(*a);
-                error();
+                error_digit(str_splited, *a);//limpia todo y sale
             }
             else
-                stack_add_bottom(a, stack_create(ft_atoi(str_splited[i])));
+                add_number(str_splited[i], a, pos++);
         }
         x++;
         free_all((void **)str_splited);
@@ -144,9 +168,11 @@ int main(int argc, char **argv)
     else
     {
         init_stack(&a, argv, argc);
+        print_stack(a);
         if (is_sorted(a) == 1)//no esta ordenado
         {
             stack_sorter(a, b);
+            free_stack(a);
         }
         else//esta ordenado
         {
