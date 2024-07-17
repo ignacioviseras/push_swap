@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/16 18:54:53 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/17 20:14:50 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int is_sorted(t_stack *stack)
 {
     if (!stack)
         return (1);
-    while (stack->next->next != NULL)
+    if (stack->next == NULL)//SOLO 1 elemento
+        return (0);
+    while (stack->next != NULL)//MAS de 1 elemento
     {
         if (stack->value < stack->next->value)// comprueba si es menor q el siguiente
             return (1);// si no lo es es q no esta ordenado

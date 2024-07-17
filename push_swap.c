@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/16 20:43:08 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/17 19:01:44 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,11 @@ int main(int argc, char **argv)
         }
         else//esta ordenado
         {
+            ft_printf("***** End sorting *****\n");
+            print_stack(a);
+
+            free_stack(a);
+
             //temdria q poer algo aqui q cierre la funcion
         }
     }
