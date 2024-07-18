@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/06/01 23:52:15 by igvisera         ###   ########.fr        #
+#    Updated: 2024/07/18 18:28:39 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,9 @@ SRCS		=	push_swap.c \
 				push_stack.c \
 				debug.c \
 				rotate_stack.c \
-				algorit.c
+				algorit.c \
+				swap_stack.c \
 				# reverse_rotate_stack.c \
-				# swap_stack.c \
 				# push_swap_utils.c \
 
 

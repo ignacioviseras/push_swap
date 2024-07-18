@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/16 19:18:03 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/18 18:34:55 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int get_size(t_stack *stack)
 {
 	int size;
 
-	size = 0;
+	size = 1;
 	if (!stack)
 		return (0);	
 	while (stack->next != NULL)

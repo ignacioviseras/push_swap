@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/16 19:18:48 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:45:58 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ typedef struct s_stack
 {
 	int				value;
 	int				pos;
+	int				cost_a;
+	int				cost_b;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -34,15 +36,14 @@ void				free_all(void **str);
 void				free_stack(t_stack *stack);
 void				error(void);
 
-// push
-void stack_push(t_stack **stack, t_stack *new_node);
-t_stack *delete_first_node(t_stack **stack);
+//algoritm
+void sorter_three(t_stack **a);
+void stack_sorter(t_stack **a, t_stack **b);
 int is_sorted(t_stack *stack);
-void stack_sorter(t_stack *a, t_stack *b);
-
-//t_stack stack_sorter(t_stack *a, t_stack *b);
 
 //push
+t_stack *delete_first_node(t_stack **stack);
+void stack_push(t_stack **stack, t_stack *new_node);
 void pa(t_stack **a, t_stack **b);
 void pb(t_stack **a, t_stack **b);
 

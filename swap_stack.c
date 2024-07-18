@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:52:46 by igvisera          #+#    #+#             */
-/*   Updated: 2024/06/18 21:07:55 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:47:15 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,15 @@ void sa(t_stack **a)
 {
 	if (!a || !(*a) || !(*a)->next)
         return;
-    
     t_stack *first;
     t_stack *second;
 
-	first = *a;
+	first = (*a);
 	second = (*a)->next;
-
     first->next = second->next;
     second->next = first;
-    *a = second;
-    write(1, "sa\n", 1);
+    (*a) = second;
+    write(1, "sa\n", 3);
 }
 
 void sb(t_stack **b)
@@ -43,7 +41,7 @@ void sb(t_stack **b)
     first->next = second->next;
     second->next = first;
     *b = second;
-    write(1, "sb\n", 1);
+    write(1, "sb\n", 3);
 }
 
 void ss(t_stack **a, t_stack **b)
@@ -69,6 +67,6 @@ void ss(t_stack **a, t_stack **b)
         first_a->next = second_a->next;
         second_a->next = first_a;
         *a = second_a;
-        write(1, "ss\n", 1);
+        write(1, "ss\n", 3);
     }
 }

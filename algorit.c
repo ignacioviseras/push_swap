@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/17 20:14:50 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/18 19:46:06 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,31 @@ int is_sorted(t_stack *stack)
         return (0);
     while (stack->next != NULL)//MAS de 1 elemento
     {
-        if (stack->value < stack->next->value)// comprueba si es menor q el siguiente
-            return (1);// si no lo es es q no esta ordenado
+        if (stack->value > stack->next->value)// comprueba si es mayor q el siguiente
+            return (1);// si lo es significa q no esta ordenado
         stack = stack->next;
     }
     return (0);
 }
 
-
-//t_stack stack_sorter(t_stack *a, t_stack *b)
-void stack_sorter(t_stack *a, t_stack *b)
+void sorter_three(t_stack **a)
 {
-    // print_stack(a);
-    // print_stack(b);
-    a = b;
-    ft_printf("Funcion de ordenar\n");
-    return ;
+    
+}
 
+
+void stack_sorter(t_stack **a, t_stack **b)
+{
+    b=a;//para q no me salte warning
+    if (get_size((*a)) == 2)
+        sa(a);
+    else if (get_size((*a)) == 3)
+        sorter_three(a);
+    else
+    {
+
+    }
+    print_stack((*a));
+
+    return ;
 }
