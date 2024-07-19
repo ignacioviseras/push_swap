@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/18 18:34:55 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:02:15 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,28 +48,4 @@ void stack_add_top(t_stack **stack, t_stack *new_stack)
 			new_stack->next = *stack;
 		*stack = new_stack;
 	}
-}
-
-t_stack *get_last(t_stack *stack)
-{
-	if (!stack)
-		return (NULL);	
-	while (stack->next != NULL)
-		stack = stack->next;
-	return (stack);
-}
-
-int get_size(t_stack *stack)
-{
-	int size;
-
-	size = 1;
-	if (!stack)
-		return (0);	
-	while (stack->next != NULL)
-	{
-		size++;
-		stack = stack->next;
-	}
-	return (size);
 }

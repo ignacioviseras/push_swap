@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/18 19:45:58 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:12:59 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,10 @@ void				free_stack(t_stack *stack);
 void				error(void);
 
 //algoritm
-void sorter_three(t_stack **a);
+void sort_three(t_stack **a);
 void stack_sorter(t_stack **a, t_stack **b);
 int is_sorted(t_stack *stack);
+t_stack *get_max(t_stack *stack);
 
 //push
 t_stack *delete_first_node(t_stack **stack);

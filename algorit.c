@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/18 19:46:06 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/19 18:27:49 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,18 @@ int is_sorted(t_stack *stack)
     return (0);
 }
 
-void sorter_three(t_stack **a)
+void sort_three(t_stack **a)
 {
-    
+    t_stack *max;
+
+
+    max = get_max(*a);
+    if (max == *a)
+        ra(a);
+    else if ((*a)->next == max)
+        rra(a);
+    if ((*a)->value > (*a)->next->value)
+        sa(a);
 }
 
 
@@ -39,7 +48,7 @@ void stack_sorter(t_stack **a, t_stack **b)
     if (get_size((*a)) == 2)
         sa(a);
     else if (get_size((*a)) == 3)
-        sorter_three(a);
+        sort_three(a);
     else
     {
 
