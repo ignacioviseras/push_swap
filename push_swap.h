@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/19 18:12:59 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/20 18:55:35 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,38 +30,46 @@ void				init_stack(t_stack **a, char **num, int n_num);
 t_stack				*stack_create(int value, int pos);
 void				stack_add_bottom(t_stack **stack, t_stack *new_stack);
 void				stack_add_top(t_stack **stack, t_stack *new_stack);
-t_stack				*get_last(t_stack *stack);
-int					get_size(t_stack *stack);
-void				free_all(void **str);
-void				free_stack(t_stack *stack);
 void				error(void);
 
+//frees
+void				free_all(void **str);
+void				free_stack(t_stack *stack);
+
+
+//info_stack
+t_stack				*get_last(t_stack *stack);
+int					get_size(t_stack *stack);
+t_stack				*get_max(t_stack *stack);
+
+
 //algoritm
-void sort_three(t_stack **a);
-void stack_sorter(t_stack **a, t_stack **b);
-int is_sorted(t_stack *stack);
-t_stack *get_max(t_stack *stack);
+void				sort_three(t_stack **a);
+void				stack_sorter(t_stack **a, t_stack **b);
+int					is_sorted(t_stack *stack);
+void				init_mechanical_turk(t_stack **a, t_stack **b);
 
 //push
-t_stack *delete_first_node(t_stack **stack);
-void stack_push(t_stack **stack, t_stack *new_node);
-void pa(t_stack **a, t_stack **b);
-void pb(t_stack **a, t_stack **b);
+t_stack				*delete_first_node(t_stack **stack);
+void				stack_push(t_stack **stack, t_stack *new_node);
+void				pa(t_stack **a, t_stack **b);
+void				pb(t_stack **a, t_stack **b);
 
 
 // rotate
-void ra(t_stack **a);
-void rb(t_stack **b);
-void rr(t_stack **a, t_stack **b);
+void				ra(t_stack **a);
+void				rb(t_stack **b);
+void				rr(t_stack **a, t_stack **b);
 
 // reverse rotate
-void rra(t_stack **a);
-void rrb(t_stack **b);
-void rrr(t_stack **a, t_stack **b);
+void				rra(t_stack **a);
+void				rrb(t_stack **b);
+void				rrr(t_stack **a, t_stack **b);
+
 // swap
-void sa(t_stack **a);
-void sb(t_stack **b);
-void ss(t_stack **a, t_stack **b);
+void				sa(t_stack **a);
+void				sb(t_stack **b);
+void				ss(t_stack **a, t_stack **b);
 
 //DEBUGG
 void				print_stack(t_stack *stack);

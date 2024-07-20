@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/19 18:27:49 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:54:11 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void sort_three(t_stack **a)
 {
     t_stack *max;
 
-
     max = get_max(*a);
     if (max == *a)
         ra(a);
@@ -41,19 +40,26 @@ void sort_three(t_stack **a)
         sa(a);
 }
 
+void init_mechanical_turk(t_stack **a, t_stack **b)
+{
+    move_cost(a, b);
+}
+
 
 void stack_sorter(t_stack **a, t_stack **b)
 {
-    b=a;//para q no me salte warning
-    if (get_size((*a)) == 2)
+    if (get_size((*a)) == 0)
+        return;
+    else if (get_size((*a)) == 2)
         sa(a);
     else if (get_size((*a)) == 3)
         sort_three(a);
     else
     {
-
+        init_mechanical_turk(a, b);
+        ft_printf("stack len '%d'\n", get_size(*a));
     }
-    print_stack((*a));
+    // print_stack((*a));
 
     return ;
 }
