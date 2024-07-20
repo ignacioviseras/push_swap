@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:01:50 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/19 18:29:09 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/20 17:29:12 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_stack *get_max(t_stack *stack)
     if (!stack)
 		return (0);	
     max_node = stack;
-    while (stack->next)
+    while (stack)
     {
         if (max_node->value < stack->value)
             max_node = stack;
