@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:01:50 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/20 17:32:49 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:47:36 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,3 @@ t_stack *get_max(t_stack *stack)
     }
     return max_node;
 }
-

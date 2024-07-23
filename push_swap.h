@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/20 18:55:35 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/22 19:03:19 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_stack
 {
 	int				value;
 	int				pos;
+	int				middle;
 	int				cost_a;
 	int				cost_b;
 	struct s_stack	*next;
@@ -35,6 +36,10 @@ void				error(void);
 //frees
 void				free_all(void **str);
 void				free_stack(t_stack *stack);
+
+//machenical_turk
+void				top_half(t_stack **a);
+void				init_mechanical_turk(t_stack **a, t_stack **b);
 
 
 //info_stack

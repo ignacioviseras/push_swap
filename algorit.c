@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/20 17:54:11 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/22 19:13:19 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,16 @@ void sort_three(t_stack **a)
 
 void init_mechanical_turk(t_stack **a, t_stack **b)
 {
-    move_cost(a, b);
-}
+    // move_cost(a, b);
+    ft_printf("accedes??\n");
+    top_half(a);
+    ft_printf("123\n");
 
+    b = a;
+    print_stack((*a));
+    free_stack((*b));
+
+}
 
 void stack_sorter(t_stack **a, t_stack **b)
 {
