@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/22 19:13:19 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/07/23 19:07:24 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,11 @@ void sort_three(t_stack **a)
 void init_mechanical_turk(t_stack **a, t_stack **b)
 {
     // move_cost(a, b);
-    ft_printf("accedes??\n");
+    t_stack **debug;
     top_half(a);
-    ft_printf("123\n");
-
-    b = a;
-    print_stack((*a));
-    free_stack((*b));
-
+    b = NULL;
+    debug = b;
+    b = debug;
 }
 
 void stack_sorter(t_stack **a, t_stack **b)
@@ -64,9 +61,6 @@ void stack_sorter(t_stack **a, t_stack **b)
     else
     {
         init_mechanical_turk(a, b);
-        ft_printf("stack len '%d'\n", get_size(*a));
     }
-    // print_stack((*a));
-
     return ;
 }

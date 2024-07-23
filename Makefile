@@ -6,13 +6,12 @@
 #    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/07/22 18:49:27 by igvisera         ###   ########.fr        #
+#    Updated: 2024/07/23 19:06:46 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
-# CFLAGS		=	-Wall -Wextra -Werror -g3 -fsanitize=address -fPIE
-CFLAGS		=	-Wall -Wextra -g3 -fsanitize=address -fPIE
+CFLAGS		=	-Wall -Wextra -Werror -g3 -fsanitize=address -fPIE
 
 
 UTILS_A		=	utils.a
