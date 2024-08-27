@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/22 17:58:46 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/22 20:16:51 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_stack *stack_create(int value, int pos)
 	stack->value = value;
 	stack->pos = pos;
 	stack->middle = 0;
+	stack->target = NULL;
 	stack->next = NULL;
 	return (stack);
 }

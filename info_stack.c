@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:01:50 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/22 18:47:36 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/22 17:30:10 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,20 @@ t_stack *get_max(t_stack *stack)
         stack = stack->next;
     }
     return max_node;
+}
+
+t_stack *get_min(t_stack *stack)
+{
+    t_stack *min_node;
+
+    if (!stack)
+		return (0);	
+    min_node = stack;
+    while (stack)
+    {
+        if (min_node->value > stack->value)
+            min_node = stack;
+        stack = stack->next;
+    }
+    return min_node;
 }

@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/23 19:06:52 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/20 19:55:10 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,10 @@ int main(int argc, char **argv)
         {
             stack_sorter(&a, &b);
             ft_printf("***** Despues de ordenarse *****\n");
+            ft_printf("***** Stack A *****\n");
             print_stack(a);
+            ft_printf("***** Stack B *****\n");
+            print_stack(b);
             free_stack(a);
         }
         else//esta ordenado

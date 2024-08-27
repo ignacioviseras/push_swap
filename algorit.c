@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/23 19:07:24 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/22 18:07:18 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,18 @@ void sort_three(t_stack **a)
 
 void init_mechanical_turk(t_stack **a, t_stack **b)
 {
-    // move_cost(a, b);
-    t_stack **debug;
+    pb(a, b);
+    pb(a, b);
     top_half(a);
+    set_target_max(a, b);
+    
+    
+    //--------------------
+    t_stack **debug;
     b = NULL;
     debug = b;
     b = debug;
+    //--------------------
 }
 
 void stack_sorter(t_stack **a, t_stack **b)
@@ -59,8 +65,6 @@ void stack_sorter(t_stack **a, t_stack **b)
     else if (get_size((*a)) == 3)
         sort_three(a);
     else
-    {
         init_mechanical_turk(a, b);
-    }
     return ;
 }
