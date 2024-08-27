@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/22 18:07:18 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/27 19:16:23 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void init_mechanical_turk(t_stack **a, t_stack **b)
     pb(a, b);
     pb(a, b);
     top_half(a);
-    set_target_max(a, b);
+    set_target_max_a(a, b);
     
     
     //--------------------

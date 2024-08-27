@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:03:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/22 20:18:15 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/27 19:55:49 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,24 @@ void				set_target_max_a(t_stack **a, t_stack **b)
 		error();
 	stack_a = a;
 	stack_b = b;
-	while ((*b)->next != NULL)
+	while ((*a)->next != NULL)
 	{
-		if ((*b)->value > (*a)->value)
+		while ((*b)->next != NULL)
 		{
-			if (!target)
-				target = (*b);
-			if ((*b)->value < target)
-				target = (*b);
+			if ((*b)->value > (*a)->value)
+			{
+				if (!target)
+					target = (*b);
+				if ((*b)->value < target->value)
+					target = (*b);
+			}
+			b = &(*b)->next;
 		}
-		b = (*b)->next;
+		(*a)->target = target;
+		a = &(*a)->next;
 	}
-	(*a)->target = target;
 	a = stack_a;
 	b = stack_b;
-	
 }
 
 
@@ -51,10 +54,35 @@ void				set_target_max_a(t_stack **a, t_stack **b)
 /*
 target de b numero menor mas cercano
 */
-// t_stack				set_target_min_b(t_stack **a, t_stack **b)
-// {
+t_stack				set_target_min_b(t_stack **a, t_stack **b)
+{
+	t_stack **stack_a;
+	t_stack **stack_b;
+	t_stack *target;
 
-// }
+	if (!a || !b)
+		error();
+	stack_a = a;
+	stack_b = b;
+	while ((*b)->next != NULL)
+	{
+		while ((*a)->next != NULL)
+		{
+			if ((*a)->value > (*b)->value)
+			{
+				if (!target)
+					target = (*a);
+				if ((*a)->value < target->value)
+					target = (*a);
+			}
+			a = &(*a)->next;
+		}
+		(*b)->target = target;
+		b = &(*b)->next;
+	}
+	a = stack_a;
+	b = stack_b;
+}
 
 // t_stack				set_target_max_b(t_stack **a, t_stack **b)
 // {

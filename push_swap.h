@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/22 20:15:47 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/27 19:37:46 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_stack
 	int				middle;
 	int				cost_a;
 	int				cost_b;
-	t_stack			*target;
+	struct s_stack	*target;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -50,8 +50,10 @@ t_stack				*get_max(t_stack *stack);
 t_stack				*get_min(t_stack *stack);
 
 //calculate
-t_stack				set_target_max(t_stack **a, t_stack **b);
-// t_stack				set_target_min(t_stack **a, t_stack **b);
+void				set_target_max_a(t_stack **a, t_stack **b);
+// t_stack				set_target_min_a(t_stack **a, t_stack **b);
+// t_stack				set_target_max_b(t_stack **a, t_stack **b);
+// t_stack				set_target_min_b(t_stack **a, t_stack **b);
 
 //algoritm
 void				sort_three(t_stack **a);
