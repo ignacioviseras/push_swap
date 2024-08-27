@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/27 19:37:46 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/27 20:03:21 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ t_stack				*get_min(t_stack *stack);
 
 //calculate
 void				set_target_max_a(t_stack **a, t_stack **b);
+void				set_target_max_b(t_stack **a, t_stack **b);
 // t_stack				set_target_min_a(t_stack **a, t_stack **b);
-// t_stack				set_target_max_b(t_stack **a, t_stack **b);
 // t_stack				set_target_min_b(t_stack **a, t_stack **b);
 
 //algoritm
