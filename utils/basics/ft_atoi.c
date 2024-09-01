@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 21:58:11 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/25 17:35:16 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:23:35 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_atoi(char *nptr)
 	while (nptr[index] >= '0' && nptr[index] <= '9')
 		num = num * 10 + (nptr[index++] - '0');
 	num *= sign;
-	if (num < INT_MAX || num > INT_MIN)//si esta fuera del rango de un int
+	if (num > INT_MAX || num < INT_MIN)//si esta fuera del rango de un int
 		error();
 	return (num);
 }

@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/20 19:55:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/08/29 17:36:07 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void error()
     ft_printf("Error\n");
     exit(1);
 }
-
 
 void error_digit(char **str_splited, t_stack *a)
 {
@@ -73,6 +72,7 @@ void    add_number(char *char_num, t_stack **stack, int n)
     t_stack **aux;
     t_stack *top_stack;
     
+
     top_stack = *stack;
     num = ft_atoi(char_num);
     if ((*stack) == NULL) {
@@ -94,7 +94,6 @@ void    add_number(char *char_num, t_stack **stack, int n)
     return ;
 }
 
-
 void init_stack(t_stack **a, char **num, int n_num)
 {
     int x;
@@ -113,9 +112,7 @@ void init_stack(t_stack **a, char **num, int n_num)
         while (++i < size)
         {
             if (is_digit(str_splited[i]) == 1)// NO cumple el control de datos
-            {
                 error_digit(str_splited, *a);//limpia todo y sale
-            }
             else
                 add_number(str_splited[i], a, pos++);
         }
@@ -132,6 +129,7 @@ int main(int argc, char **argv)
 
     a = NULL;
     b = NULL;
+
     if (argc < 2)
         error();
     else
