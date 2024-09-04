@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/02 17:18:25 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:25:27 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_stack
 	int				middle;
 	int				cost_a;
 	int				cost_b;
+	int				is_cheapest;
 	struct s_stack	*target;
 	struct s_stack	*next;
 }					t_stack;
@@ -41,6 +42,11 @@ void				free_stack(t_stack *stack);
 //machenical_turk
 void				top_half(t_stack **a);
 void				init_turk(t_stack **a, t_stack **b);
+
+// count
+void init_a(t_stack **a, t_stack **b);
+void set_cheapest(t_stack **stack);
+static void cost_a(t_stack **a, t_stack **b);
 
 
 //info_stack

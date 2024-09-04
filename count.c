@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:05:04 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/04 16:00:59 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/04 20:07:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ void set_cheapest(t_stack **stack)
 		}
 		(*stack) = (*stack)->next;				
 	}
-	(*cheapest_node).
-	// 39.33
+	(*cheapest_node)->is_cheapest = 1;
 }
 
 void init_a(t_stack **a, t_stack **b)
@@ -64,3 +63,36 @@ void init_a(t_stack **a, t_stack **b)
 }
 
 
+static void move_a_to_b(t_stack **a, t_stack **b)
+{
+	t_stack *cheapest;
+
+	cheapest = get_cheapest((*a));
+	if (cheapest->middle && cheapest->target->middle)
+		rr(a, b);//creo q esto no esta bn
+	else if (!(cheapest->middle) && !(cheapest->target->middle))
+		rrr(a, b);//creo q esto no esta bn
+	//mirar esto bn da error???
+	prep_push(a, cheapest);
+	prep_push(b, cheapest->target);
+	pb(a, b);
+
+}
+
+static void move_b_to_a(t_stack **a, t_stack **b)
+{
+	prep_push(a, (*b)->target);
+	pa(a, b);
+}
+
+static void min_on_top(t_stack **a)
+{
+	while ((*a)->value != get_min((*a))->value)
+	{
+		if (get_min((*a))->middle)
+			ra(a);
+		else
+			rra(a);
+	}
+	
+}

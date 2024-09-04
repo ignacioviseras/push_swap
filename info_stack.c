@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   info_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:01:50 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/22 17:30:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/04 19:44:14 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,17 @@ t_stack *get_min(t_stack *stack)
         stack = stack->next;
     }
     return min_node;
+}
+
+t_stack     *get_cheapest(t_stack *stack)
+{
+    t_stack *stack_cheapest;
+
+    stack_cheapest = stack;
+    while (stack_cheapest->next != NULL)
+    {
+        if (stack_cheapest->is_cheapest == 1)
+            return (stack_cheapest);
+    }
+    return (NULL);
 }

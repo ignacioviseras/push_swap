@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_actions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/29 17:25:11 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:26:09 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_stack *stack_create(int value, int pos)
 	stack->value = value;
 	stack->pos = pos;
 	stack->middle = 0;
+	stack->is_cheapest = 0;
 	stack->target = NULL;
 	stack->next = NULL;
 	return (stack);
