@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/27 19:16:23 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/02 18:05:54 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,41 @@ void sort_three(t_stack **a)
         sa(a);
 }
 
-void init_mechanical_turk(t_stack **a, t_stack **b)
+void init_turk(t_stack **a, t_stack **b)
 {
-    pb(a, b);
-    pb(a, b);
-    top_half(a);
-    set_target_max_a(a, b);
+    int len;
+    len = get_size((*a));
+    if (len-- > 3 && !is_sorted((*a)))
+        pb(a, b);
+    if (len-- > 3 && !is_sorted((*a)))
+        pb(a, b);
+    while (len-- > 3 && is_sorted((*a)))
+    {
+        init_a(a);
+        // move_a_to_b();
+    }
+    sort_three(a);
+    while ((*b))
+    {
+        // init_node_b();
+        // move_b_to_a()        
+    }
+    // current_index(*a);
+    // min_on_top(a);
     
-    
+    //----------------------------
+    // top_half(a);
+    // set_target_max_a(a, b);
+
+    // printf("------ max A ------\n");
+    // set_target_max_a(a, b);
+    // print_stack((*a));
+    // printf("------ max B ------\n");
+    // set_target_max_b(a, b);
+    // print_stack((*b));
+    //set_target_max_a(a, b);
     //--------------------
+
     t_stack **debug;
     b = NULL;
     debug = b;
@@ -65,6 +91,6 @@ void stack_sorter(t_stack **a, t_stack **b)
     else if (get_size((*a)) == 3)
         sort_three(a);
     else
-        init_mechanical_turk(a, b);
+        init_turk(a, b);
     return ;
 }

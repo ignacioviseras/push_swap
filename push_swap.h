@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/27 20:43:40 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/02 17:18:25 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void				free_stack(t_stack *stack);
 
 //machenical_turk
 void				top_half(t_stack **a);
-void				init_mechanical_turk(t_stack **a, t_stack **b);
+void				init_turk(t_stack **a, t_stack **b);
 
 
 //info_stack
@@ -51,8 +51,8 @@ t_stack				*get_min(t_stack *stack);
 
 //calculate
 void				set_target_max_a(t_stack **a, t_stack **b);
-// void				set_target_max_b(t_stack **a, t_stack **b);
-// void				set_target_min_a(t_stack **a, t_stack **b);
+void				set_target_max_b(t_stack **a, t_stack **b);
+void				set_target_min_a(t_stack **a, t_stack **b);
 void				set_target_min_b(t_stack **a, t_stack **b);
 
 //algoritm
