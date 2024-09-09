@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/04 16:22:42 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:00:44 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,35 +51,16 @@ void init_turk(t_stack **a, t_stack **b)
     while (len-- > 3 && is_sorted((*a)))
     {
         init_a(a, b);
-        // move_a_to_b();
+        move_a_to_b(a, b);
     }
     sort_three(a);
     while ((*b))
     {
-        // init_node_b();
-        // move_b_to_a()        
+        init_b(a, b);
+        move_b_to_a(a, b);    
     }
-    // current_index(*a);
-    // min_on_top(a);
-    
-    //----------------------------
-    // top_half(a);
-    // set_target_max_a(a, b);
-
-    // printf("------ max A ------\n");
-    // set_target_max_a(a, b);
-    // print_stack((*a));
-    // printf("------ max B ------\n");
-    // set_target_max_b(a, b);
-    // print_stack((*b));
-    //set_target_max_a(a, b);
-    //--------------------
-
-    t_stack **debug;
-    b = NULL;
-    debug = b;
-    b = debug;
-    //--------------------
+	top_half(a);
+    min_on_top(a);
 }
 
 void stack_sorter(t_stack **a, t_stack **b)

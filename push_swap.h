@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/04 16:25:27 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:35:53 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,23 @@ void				top_half(t_stack **a);
 void				init_turk(t_stack **a, t_stack **b);
 
 // count
-void init_a(t_stack **a, t_stack **b);
-void set_cheapest(t_stack **stack);
-static void cost_a(t_stack **a, t_stack **b);
+void			cost_a(t_stack **a, t_stack **b);
+void				set_cheapest(t_stack **stack);
+void				init_a(t_stack **a, t_stack **b);
+void			move_a_to_b(t_stack **a, t_stack **b);
+void			move_b_to_a(t_stack **a, t_stack **b);
+void			min_on_top(t_stack **a);
+
+
+//move
+void				r_both(t_stack **a, t_stack **b, t_stack *cheapest);
+void				prep_push_a(t_stack **a, t_stack *cheapest);
+void				prep_push_b(t_stack **b, t_stack *cheapest);
+
+
+//init_b
+void                set_target_b(t_stack **a, t_stack **b);
+void				init_b(t_stack **a, t_stack **b);
 
 
 //info_stack
@@ -54,8 +68,12 @@ t_stack				*get_last(t_stack *stack);
 int					get_size(t_stack *stack);
 t_stack				*get_max(t_stack *stack);
 t_stack				*get_min(t_stack *stack);
+t_stack     *get_cheapest(t_stack *stack);
 
 //calculate
+void                set_target_a(t_stack **a, t_stack **b);
+
+//---------------
 void				set_target_max_a(t_stack **a, t_stack **b);
 void				set_target_max_b(t_stack **a, t_stack **b);
 void				set_target_min_a(t_stack **a, t_stack **b);

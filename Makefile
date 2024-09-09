@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/08/22 18:06:20 by igvisera         ###   ########.fr        #
+#    Updated: 2024/09/08 18:09:18 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,19 +19,21 @@ UTILS_SRC 	=	./utils/
 UTILS_OBJS	=	$(addprefix $(UTILS_SRC), *.o)
 UTILS     	=	$(addprefix $(UTILS_SRC), $(UTILS_A))
 
-SRCS		=	push_swap.c \
-				stack_actions.c \
-				frees.c \
-				push_stack.c \
-				debug.c \
-				rotate_stack.c \
-				algorit.c \
-				swap_stack.c \
-				info_stack.c \
-				reverse_rotate_stack.c \
-				mechanical_turk.c \
+SRCS		=	algorit.c \
 				calculate.c \
-				# push_swap_utils.c \
+				count.c \
+				debug.c \
+				frees.c \
+				info_stack.c \
+				init_b.c \
+				mechanical_turk.c \
+				move.c \
+				push_stack.c \
+				push_swap.c \
+				reverse_rotate_stack.c \
+				rotate_stack.c \
+				stack_actions.c \
+				swap_stack.c \
 
 
 OBJS		=	${SRCS:.c=.o} \

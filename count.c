@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:05:04 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/04 20:07:08 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:38:07 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
 
-static void cost_a(t_stack **a, t_stack **b)
+void cost_a(t_stack **a, t_stack **b)
 {
 	int len_a;
 	int len_b;
@@ -35,7 +35,7 @@ static void cost_a(t_stack **a, t_stack **b)
 void set_cheapest(t_stack **stack)
 {
 	long	cheapest_val;
-	t_stack **cheapest_node;
+	t_stack *cheapest_node;
 
 	if (!(*stack))
 		return ;
@@ -45,11 +45,11 @@ void set_cheapest(t_stack **stack)
 		if ((*stack)->cost_a < cheapest_val)
 		{
 			cheapest_val = (*stack)->cost_a;
-			(*cheapest_node) = (*stack);
+			cheapest_node = (*stack);
 		}
 		(*stack) = (*stack)->next;				
 	}
-	(*cheapest_node)->is_cheapest = 1;
+	cheapest_node->is_cheapest = 1;
 }
 
 void init_a(t_stack **a, t_stack **b)
@@ -59,33 +59,32 @@ void init_a(t_stack **a, t_stack **b)
 	set_target_a(a, b);
 	cost_a(a, b);
 	set_cheapest(a);
-	
 }
 
 
-static void move_a_to_b(t_stack **a, t_stack **b)
+void move_a_to_b(t_stack **a, t_stack **b)
 {
 	t_stack *cheapest;
 
 	cheapest = get_cheapest((*a));
 	if (cheapest->middle && cheapest->target->middle)
-		rr(a, b);//creo q esto no esta bn
+		r_both(a, b, cheapest);//creo q esto no esta bn
 	else if (!(cheapest->middle) && !(cheapest->target->middle))
 		rrr(a, b);//creo q esto no esta bn
 	//mirar esto bn da error???
-	prep_push(a, cheapest);
-	prep_push(b, cheapest->target);
+	prep_push_a(a, cheapest);
+	prep_push_b(b, cheapest->target);
 	pb(a, b);
 
 }
 
-static void move_b_to_a(t_stack **a, t_stack **b)
+void move_b_to_a(t_stack **a, t_stack **b)
 {
-	prep_push(a, (*b)->target);
+	prep_push_a(a, (*b)->target);
 	pa(a, b);
 }
 
-static void min_on_top(t_stack **a)
+void min_on_top(t_stack **a)
 {
 	while ((*a)->value != get_min((*a))->value)
 	{
@@ -94,5 +93,4 @@ static void min_on_top(t_stack **a)
 		else
 			rra(a);
 	}
-	
 }
