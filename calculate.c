@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   calculate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 18:03:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 16:21:59 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:20:23 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void                set_target_a(t_stack **a, t_stack **b)
     stack_a = *a;
     stack_b = *b;
     is_min = LONG_MIN;
-    while (stack_a->next != NULL)
+    while (stack_a)
     {
         while (stack_b->next != NULL)
         {
@@ -111,6 +111,7 @@ void                set_target_a(t_stack **a, t_stack **b)
 		else
 			stack_a->target = stack_b;
         stack_a = stack_a->next;
+        stack_b = *b;
     }
 }
 

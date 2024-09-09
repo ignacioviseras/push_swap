@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 18:00:44 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:58:42 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ void init_turk(t_stack **a, t_stack **b)
 {
     int len;
     len = get_size((*a));
-    if (len-- > 3 && !is_sorted((*a)))
+    if (len-- > 3 && is_sorted((*a)) == 1)
         pb(a, b);
-    if (len-- > 3 && !is_sorted((*a)))
+    if (len-- > 3 && is_sorted((*a)) == 1)
         pb(a, b);
     while (len-- > 3 && is_sorted((*a)))
     {

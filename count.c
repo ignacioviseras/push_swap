@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:05:04 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 18:38:07 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:25:58 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,11 @@ void cost_a(t_stack **a, t_stack **b)
 {
 	int len_a;
 	int len_b;
+	t_stack *head_a;
+	t_stack *head_b;
 
+	head_a = *a;
+	head_b = *b;
 	len_a = get_size((*a));
 	len_b = get_size((*b));
 	while ((*a))
@@ -30,13 +34,17 @@ void cost_a(t_stack **a, t_stack **b)
 			(*a)->cost_a += len_b - ((*a)->target->pos);
 		(*a) = (*a)->next;
 	}
+	*a = head_a;
+	*b = head_b;
 }
 
 void set_cheapest(t_stack **stack)
 {
 	long	cheapest_val;
 	t_stack *cheapest_node;
+	t_stack *head_stack;
 
+	head_stack = *stack;
 	if (!(*stack))
 		return ;
 	cheapest_val = LONG_MAX;
@@ -50,6 +58,7 @@ void set_cheapest(t_stack **stack)
 		(*stack) = (*stack)->next;				
 	}
 	cheapest_node->is_cheapest = 1;
+	*stack = head_stack;
 }
 
 void init_a(t_stack **a, t_stack **b)
