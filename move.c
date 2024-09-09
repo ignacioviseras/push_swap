@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:07:21 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 18:13:36 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/09 18:27:16 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ void	r_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {
 	while (*b != cheapest->target && *a != cheapest)
 		rr(a, b);
+	top_half(a);
+	top_half(b);
+}
+
+void	rev_r_both(t_stack **a, t_stack **b, t_stack *cheapest)
+{
+	while (*b != cheapest->target && *a != cheapest)
+		rrr(a, b);
 	top_half(a);
 	top_half(b);
 }
