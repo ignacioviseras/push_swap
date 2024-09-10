@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:39:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/10 15:08:01 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/10 19:41:51 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void                set_target_b(t_stack **a, t_stack **b)
         }
         if (is_max == LONG_MAX)
             stack_b->target = get_min(stack_a);
+        // else
+        //     stack_b->target = stack_a;
         stack_b = stack_b->next;
         stack_a = *a;
     }
