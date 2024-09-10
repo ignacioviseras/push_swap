@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:07:21 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/09 18:27:16 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:54:23 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	prep_push_b(t_stack **b, t_stack *cheapest)
 	while (*b != cheapest)
 	{
 		if (cheapest->middle)
-			ra(b);
+			rb(b);
 		else
-			rra(b);
+			rrb(b);
 	}
 }

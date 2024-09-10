@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:05:04 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/09 17:25:58 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:43:31 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void move_a_to_b(t_stack **a, t_stack **b)
 	if (cheapest->middle && cheapest->target->middle)
 		r_both(a, b, cheapest);//creo q esto no esta bn
 	else if (!(cheapest->middle) && !(cheapest->target->middle))
-		rrr(a, b);//creo q esto no esta bn
+		rev_r_both(a, b, cheapest);//creo q esto no esta bn
 	//mirar esto bn da error???
 	prep_push_a(a, cheapest);
 	prep_push_b(b, cheapest->target);

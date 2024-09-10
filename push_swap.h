@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 18:35:53 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:41:10 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void			min_on_top(t_stack **a);
 
 //move
 void				r_both(t_stack **a, t_stack **b, t_stack *cheapest);
+void				rev_r_both(t_stack **a, t_stack **b, t_stack *cheapest);
 void				prep_push_a(t_stack **a, t_stack *cheapest);
 void				prep_push_b(t_stack **b, t_stack *cheapest);
 

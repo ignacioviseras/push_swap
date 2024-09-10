@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:39:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/09 17:07:26 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/10 15:08:01 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void                set_target_b(t_stack **a, t_stack **b)
     stack_a = *a;
     stack_b = *b;
     is_max = LONG_MAX;
-    while (stack_b->next != NULL)
+    while (stack_b)
     {
         while (stack_a->next != NULL)
         {
