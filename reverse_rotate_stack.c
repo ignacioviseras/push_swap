@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:54:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/20 17:30:57 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:21:07 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
-
-//todo ¿tengo que añadir algun write o algo para saber cual se ejecuta?? 
 
 void rra(t_stack **a)
 {

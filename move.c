@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:07:21 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/10 14:54:23 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:23:21 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
-
 
 void	r_both(t_stack **a, t_stack **b, t_stack *cheapest)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/10 16:20:10 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:21:36 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,25 +53,13 @@ void init_turk(t_stack **a, t_stack **b)
         init_a(a, b);
         move_a_to_b(a, b);
     }
-    ft_printf("***** antes de sort three *****\n");
-    print_stack(*a);
     sort_three(a);
-    ft_printf("***** despes sort three *****\n");
-    print_stack(*a);
     while ((*b))
     {
         init_b(a, b);
-        ft_printf("***** Despues de init b *****\n");
-        ft_printf("***** Stack A *****\n");
-        print_stack(*a);
-        ft_printf("***** Stack B *****\n");
-        print_stack(*b);
-        move_b_to_a(a, b);    
+        move_b_to_a(a, b);  
     }
-	top_half(a);
-    ft_printf("***** Despues de move_b_to_a *****\n");
-    ft_printf("***** Stack A *****\n");
-    print_stack(*a);
+    top_half(a);
     min_on_top(a);
 }
 

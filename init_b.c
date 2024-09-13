@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_b.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 13:39:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/10 19:41:51 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:20:45 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void                set_target_b(t_stack **a, t_stack **b)
     is_max = LONG_MAX;
     while (stack_b)
     {
-        while (stack_a->next != NULL)
+        stack_a = *a;
+        while (stack_a)
         {
             if (stack_a->value > stack_b->value && stack_a->value < is_max)
             {
@@ -33,17 +34,12 @@ void                set_target_b(t_stack **a, t_stack **b)
             }
             stack_a = stack_a->next;
         }
+        stack_a = *a;
         if (is_max == LONG_MAX)
             stack_b->target = get_min(stack_a);
-        // else
-        //     stack_b->target = stack_a;
         stack_b = stack_b->next;
-        stack_a = *a;
     }
-    print_stack(stack_b);
 }
-
-
 
 void init_b(t_stack **a, t_stack **b)
 {

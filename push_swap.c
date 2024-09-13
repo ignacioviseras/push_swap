@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/08/29 17:36:07 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:19:57 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,24 +135,14 @@ int main(int argc, char **argv)
     else
     {
         init_stack(&a, argv, argc);
-        print_stack(a);
         if (is_sorted(a) == 1)//no esta ordenado
         {
             stack_sorter(&a, &b);
-            ft_printf("***** Despues de ordenarse *****\n");
-            ft_printf("***** Stack A *****\n");
-            print_stack(a);
-            ft_printf("***** Stack B *****\n");
-            print_stack(b);
             free_stack(a);
         }
         else//esta ordenado
         {
-            ft_printf("***** venia ordenado *****\n");
-            print_stack(a);
             free_stack(a);
-            // free_stack(b);
-            //temdria q poer algo aqui q cierre la funcion
         }
     }
 }

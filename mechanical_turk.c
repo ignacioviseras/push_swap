@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/20 17:53:02 by igvisera          #+#    #+#             */
-/*   Updated: 2024/07/23 19:04:50 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:23:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,20 @@
 
 void top_half(t_stack **a)
 {
-    int i;
-	int len_a;
-	int middle;
-	t_stack *top_stack;
-    
-    top_stack = *a;
-	if (!a)
-		exit(1);
-	i = 1;
-	len_a = get_size((*a));
-	middle = len_a / 2;
-	if (len_a % 2)//pa calcular la mitad del stack si es par le sumo 1
-		middle++;
-	while ((*a))
-	{
-		if (i <= middle)//por encima de la mitad
-			(*a)->middle = 1;
-		else//por debajo de la mitad
-			(*a)->middle = 0;
-		i++;
-		(*a) = (*a)->next;
-	}
-    *a = top_stack;
+	int i = 0;
+    int len_a = get_size(*a);
+    int middle = len_a / 2;
+    t_stack *temp = *a;
+
+    while (temp)
+    {
+        if (i < middle)
+            temp->middle = 1;  // Está en la parte superior
+        else
+            temp->middle = 0;  // Está en la parte inferior
+        i++;
+        temp = temp->next;
+    }
 }
 
 

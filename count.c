@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   count.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 17:05:04 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/10 14:43:31 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:20:21 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,25 +40,37 @@ void cost_a(t_stack **a, t_stack **b)
 
 void set_cheapest(t_stack **stack)
 {
-	long	cheapest_val;
-	t_stack *cheapest_node;
-	t_stack *head_stack;
+    long cheapest_val;
+    t_stack *cheapest_node;
+    t_stack *head_stack;
 
-	head_stack = *stack;
-	if (!(*stack))
-		return ;
-	cheapest_val = LONG_MAX;
-	while ((*stack))
-	{
-		if ((*stack)->cost_a < cheapest_val)
-		{
-			cheapest_val = (*stack)->cost_a;
-			cheapest_node = (*stack);
-		}
-		(*stack) = (*stack)->next;				
-	}
-	cheapest_node->is_cheapest = 1;
-	*stack = head_stack;
+    head_stack = *stack;
+    if (!(*stack))
+        return ;
+
+    // Reinicializar todos los nodos para asegurarse de que solo uno es el más barato
+    while ((*stack))
+    {
+        (*stack)->is_cheapest = 0;
+        (*stack) = (*stack)->next;
+    }
+    *stack = head_stack;
+
+    cheapest_val = LONG_MAX;
+    // Buscar el nodo más barato
+    while ((*stack))
+    {
+        if ((*stack)->cost_a < cheapest_val)
+        {
+            cheapest_val = (*stack)->cost_a;
+            cheapest_node = (*stack);
+        }
+        (*stack) = (*stack)->next;				
+    }
+
+    // Marcar el nodo más barato
+    cheapest_node->is_cheapest = 1;
+    *stack = head_stack;
 }
 
 void init_a(t_stack **a, t_stack **b)
@@ -80,7 +92,6 @@ void move_a_to_b(t_stack **a, t_stack **b)
 		r_both(a, b, cheapest);//creo q esto no esta bn
 	else if (!(cheapest->middle) && !(cheapest->target->middle))
 		rev_r_both(a, b, cheapest);//creo q esto no esta bn
-	//mirar esto bn da error???
 	prep_push_a(a, cheapest);
 	prep_push_b(b, cheapest->target);
 	pb(a, b);
