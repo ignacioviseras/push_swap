@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:54:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/13 17:21:07 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/18 21:45:15 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void rra(t_stack **a)
     t_stack *last;
     t_stack *second_last;
     last = get_last(*a);
+    if (!last)
+        return;    
     second_last = *a;
     while (second_last->next->next != NULL)
         second_last = second_last->next;

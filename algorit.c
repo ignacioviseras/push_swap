@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 21:41:55 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/13 17:21:36 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:50:34 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,38 +40,21 @@ void sort_three(t_stack **a)
         sa(a);
 }
 
-void init_turk(t_stack **a, t_stack **b)
+void stack_sorter(t_stack **a, t_stack **b, char **argv)
 {
-    int len;
-    len = get_size((*a));
-    if (len-- > 3 && is_sorted((*a)) == 1)
-        pb(a, b);
-    if (len-- > 3 && is_sorted((*a)) == 1)
-        pb(a, b);
-    while (len-- > 3 && is_sorted((*a)))
-    {
-        init_a(a, b);
-        move_a_to_b(a, b);
-    }
-    sort_three(a);
-    while ((*b))
-    {
-        init_b(a, b);
-        move_b_to_a(a, b);  
-    }
-    top_half(a);
-    min_on_top(a);
-}
+    int *numbers;
 
-void stack_sorter(t_stack **a, t_stack **b)
-{
+    numbers = parse(++argv);
     if (get_size((*a)) == 0)
         return;
     else if (get_size((*a)) == 2)
         sa(a);
     else if (get_size((*a)) == 3)
         sort_three(a);
-    else
-        init_turk(a, b);
+    else if (get_size((*a)) <= 7)
+        sort(a, b , numbers, 1);
+    else if (get_size((*a)) > 7)
+        sort(a, b , numbers, 0);
+    free(numbers);
     return ;
 }

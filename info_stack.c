@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:01:50 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/12 18:02:35 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/19 18:45:54 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,69 @@ t_stack *get_max(t_stack *stack)
     return max_node;
 }
 
-t_stack *get_min(t_stack *stack)
+int size_len(char **argv)
 {
-    t_stack *min_node;
+    int n;
+    int x;
 
-    if (!stack)
-		return (0);	
-    min_node = stack;
-    while (stack)
+    n = 0;
+    x = 0;
+    while (argv[x])
     {
-        if (min_node->value > stack->value)
-            min_node = stack;
-        stack = stack->next;
+        n += n_words(argv[x], ' ');
+        x++;
     }
-    return min_node;
+    return (n);
 }
 
-t_stack     *get_cheapest(t_stack *stack)
+int *parse(char **argv)
 {
-    t_stack *stack_cheapest;
-
-    stack_cheapest = stack;
-    while (stack_cheapest)
+    int j;
+    int k;
+    char **s_numbers;
+    int *numbers;
+    
+    k = 0;
+    numbers = malloc(sizeof(int) * (size_len(argv)));
+    if (!numbers)
+        return (NULL);
+    while (*argv != NULL)
     {
-        if (stack_cheapest->is_cheapest == 1)
-            return (stack_cheapest);
-        stack_cheapest = stack_cheapest->next;
+        s_numbers = ft_split(*argv, ' ');
+        if (!s_numbers)
+            return(free(numbers), NULL);
+        j = -1;
+        while (s_numbers[++j])
+        {
+            if (is_digit(s_numbers[j]) == 1)
+                return(free_parse(s_numbers, numbers), NULL);
+            numbers[k++] = ft_atoi(s_numbers[j]);
+        }
+        free_all((void **)s_numbers);
+        argv++;
     }
-    return (NULL);
+    return (numbers);
+}
+
+int	index_of(int n, int *arr)
+{
+	int	i;
+
+	i = 0;
+	while (arr[i] != n)
+		i++;
+	return (i);
+}
+
+int	count_r(t_stack *stack, int index)
+{
+	int	counter;
+
+	counter = 0;
+	while (stack && stack->order_pos != index)
+	{
+		stack = stack->next;
+		counter++;
+	}
+	return (counter);
 }

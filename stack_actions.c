@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   stack_actions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/04 16:26:09 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/18 16:40:15 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "./push_swap.h"
 
-t_stack *stack_create(int value, int pos)
+t_stack *stack_create(int value)
 {
 	t_stack *stack;
 	
@@ -20,10 +20,7 @@ t_stack *stack_create(int value, int pos)
 	if (!stack)
 		return (NULL);
 	stack->value = value;
-	stack->pos = pos;
-	stack->middle = 0;
-	stack->is_cheapest = 0;
-	stack->target = NULL;
+	stack->order_pos= 0;
 	stack->next = NULL;
 	return (stack);
 }

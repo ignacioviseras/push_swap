@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:53:44 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/13 17:31:17 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/18 21:42:26 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ void ra(t_stack **a)
 	first = *a;
 	new_first = (*a)->next;
 	last = get_last(*a);
-    *a = new_first;  // Actualizamos el primer elemento de la pila
-    last->next = first;  // Hacemos que el último apunte al primer elemento original
-    first->next = NULL;  // El nuevo último elemento no apunta a nada
+    if (!last)
+        return;
+    *a = new_first;
+    last->next = first;
+    first->next = NULL;
     write(1, "ra\n", 3);
 }
 
@@ -43,11 +45,15 @@ void rb(t_stack **b)
 	first = *b;
 	new_first = (*b)->next;
 	last = get_last(*b);
+    if (!last)
+        return;    
     *b = new_first;  // Actualizamos el primer elemento de la pila
     last->next = first;  // Hacemos que el último apunte al primer elemento original
     first->next = NULL;  // El nuevo último elemento no apunta a nada
     write(1, "rb\n", 3);
 }
+
+
 
 void rr(t_stack **a, t_stack **b)
 {

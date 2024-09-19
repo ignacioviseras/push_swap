@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/13 17:19:57 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/19 19:26:27 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void error_digit(char **str_splited, t_stack *a)
 
 */
 
-void    add_number(char *char_num, t_stack **stack, int n)
+void    add_number(char *char_num, t_stack **stack)
 {
     int num;
     t_stack **aux;
@@ -76,7 +76,7 @@ void    add_number(char *char_num, t_stack **stack, int n)
     top_stack = *stack;
     num = ft_atoi(char_num);
     if ((*stack) == NULL) {
-        stack_add_bottom(stack, stack_create(num, n));
+        stack_add_bottom(stack, stack_create(num));
         return ;
     }
     aux = stack;
@@ -89,7 +89,7 @@ void    add_number(char *char_num, t_stack **stack, int n)
         }
         (*aux) = (*aux)->next;
     }
-    stack_add_bottom(stack, stack_create(num, n));
+    stack_add_bottom(stack, stack_create(num));
     *stack = top_stack;
     return ;
 }
@@ -99,11 +99,9 @@ void init_stack(t_stack **a, char **num, int n_num)
     int x;
     int i;
     int size;
-    int pos;
     char **str_splited; 
 
     x = 1;
-    pos = 0;
     while (x < n_num)
     {
         size = n_words(num[x], ' ');
@@ -114,7 +112,7 @@ void init_stack(t_stack **a, char **num, int n_num)
             if (is_digit(str_splited[i]) == 1)// NO cumple el control de datos
                 error_digit(str_splited, *a);//limpia todo y sale
             else
-                add_number(str_splited[i], a, pos++);
+                add_number(str_splited[i], a);
         }
         x++;
         free_all((void **)str_splited);
@@ -129,15 +127,16 @@ int main(int argc, char **argv)
 
     a = NULL;
     b = NULL;
-
     if (argc < 2)
         error();
     else
     {
         init_stack(&a, argv, argc);
+        if (!a)
+            return(0);
         if (is_sorted(a) == 1)//no esta ordenado
         {
-            stack_sorter(&a, &b);
+            stack_sorter(&a, &b, argv);
             free_stack(a);
         }
         else//esta ordenado
