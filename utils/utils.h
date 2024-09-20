@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/08 18:29:43 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/20 17:57:43 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,15 @@
 #  define HEXUPPER "0123456789ABCDEF"
 # endif
 
-# include <stdlib.h>
-# include "stdarg.h"
 # include "../push_swap.h"
-# include <unistd.h>
-# include <stdint.h>
+# include "stdarg.h"
 # include <limits.h>
+# include <stdint.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 // SRC
-int is_digit(char *s);
+int		is_digit(char *s);
 
 // BASICS
 int		ft_atoi(char *nptr);
@@ -47,7 +47,6 @@ int		ft_strcmp(const char *s1, const char *s2);
 char	*ft_strdup(const char *s);
 char	*ft_strjoin(char *s1, const char *s2);
 size_t	ft_strlcpy(char *dst, char *src, size_t size);
-
 
 // PRINTF
 int		ft_printf(char const *format, ...);

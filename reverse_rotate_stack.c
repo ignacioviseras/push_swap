@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_stack.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:54:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/18 21:45:15 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:11:52 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void rra(t_stack **a)
     second_last = *a;
     while (second_last->next->next != NULL)
         second_last = second_last->next;
-    // Desconectamos el último nodo de la pila
-    second_last->next = NULL;    // Apuntamos el último nodo al primer nodo original de la pila
-    last->next = *a;    // El último nodo se convierte en el nuevo tope de la pila
+    second_last->next = NULL;
+    last->next = *a;
     *a = last;
     write(1, "rra\n", 4);
 }

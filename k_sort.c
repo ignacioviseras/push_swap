@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   k_sort.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 15:42:43 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/18 21:44:27 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:13:22 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./push_swap.h"
+#include "./push_swap.h"
 
-void ksort_move(t_stack **a, t_stack **b, int length, int mode)
+void	ksort_move(t_stack **a, t_stack **b, int length, int mode)
 {
 	int	i;
 	int	range;
@@ -27,7 +27,7 @@ void ksort_move(t_stack **a, t_stack **b, int length, int mode)
 		if ((*a)->order_pos <= i)
 		{
 			pb(a, b);
- 			rb(b);
+			rb(b);
 			i++;
 		}
 		else if ((*a)->order_pos <= i + range)
@@ -40,8 +40,7 @@ void ksort_move(t_stack **a, t_stack **b, int length, int mode)
 	}
 }
 
-
-void ksort_reverse(t_stack **a, t_stack **b, int length)
+void	ksort_reverse(t_stack **a, t_stack **b, int length)
 {
 	int	rb_count;
 	int	rrb_count;
@@ -65,7 +64,6 @@ void ksort_reverse(t_stack **a, t_stack **b, int length)
 			length--;
 		}
 	}
-
 }
 
 void	insertion_sort(int array[], int n)
@@ -78,7 +76,7 @@ void	insertion_sort(int array[], int n)
 	while (i < n)
 	{
 		element = array[i];
-		j = i-1;
+		j = i - 1;
 		while (j >= 0 && array[j] > element)
 		{
 			array[j + 1] = array[j];
@@ -89,10 +87,10 @@ void	insertion_sort(int array[], int n)
 	}
 }
 
-void sort(t_stack **a, t_stack **b, int *numbers, int mode)
+void	sort(t_stack **a, t_stack **b, int *numbers, int mode)
 {
-	t_stack *aux;
-	int len;
+	t_stack	*aux;
+	int		len;
 
 	len = get_size(*a);
 	insertion_sort(numbers, len);

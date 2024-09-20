@@ -3,145 +3,102 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+        */
+/*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/19 19:26:27 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/20 18:16:45 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "./push_swap.h"
+#include "./push_swap.h"
 
-void error()
+void	error(void)
 {
-    ft_printf("Error\n");
-    exit(1);
+	ft_printf("Error\n");
+	exit(1);
 }
 
-void error_digit(char **str_splited, t_stack *a)
+void	error_digit(char **str_splited, t_stack *a)
 {
-    ft_printf("Error: Use only numbers\n");
-    free_all((void **)str_splited);
-    free_stack(a);
-    exit(1);
-}
-/*
-    Reglas:
-    1.
-        Inicias a con nums + o - | OK
-        los num de a NO PUEDEN ESTAR DUPLICADOS | KO
-        inicias b sin nada | OK
-    2. 
-        Ordenar ascendente
-    3.
-        ----  Movimientos  ----
-        Swap
-            sa -> swap a
-                - pillas los 2 primeros elementos de A y los cambias (1 -> 2) y (2 -> 1)
-            sb -> swap a
-                - pillas los 2 primeros elementos de A y los cambias (1 -> 2) y (2 -> 1
-            ss -> sa y sb (a la vez)
-                - Haces sa y sb al mismo tiempo
-        Push
-            pa -> push a
-                - mandas 1 elemento al stack B
-            pb -> push b
-                - mandas 1 elemento al stack A
-        Rotate
-            ra -> rotate a
-                - pilla el PRIMER elemento de A y lo pone en la base
-            rb -> rotate b
-                - pilla el PRIMER elemento de B y lo pone en la base
-            rr -> ra y rb (a la vez)
-                - Haces ra y rb al mismo tiempo
-        Reverse Rotate
-            rra -> reverse rotate a
-                - Pillas el ULTIMO elemento de A y lo pones arriba del todo
-            rrb -> reverse rotate b
-                - Pillas el ULTIMO elemento de B y lo pones arriba del todo
-            rrr -> rra y rrb (a la vez)
-                - Haces rra y rrb al mismo timepo
-    4.
-    5.
-
-*/
-
-void    add_number(char *char_num, t_stack **stack)
-{
-    int num;
-    t_stack **aux;
-    t_stack *top_stack;
-    
-
-    top_stack = *stack;
-    num = ft_atoi(char_num);
-    if ((*stack) == NULL) {
-        stack_add_bottom(stack, stack_create(num));
-        return ;
-    }
-    aux = stack;
-    while ((*aux)->next != NULL)//PUEDE DAR PROBLEMAS?? si no tengo elementos al principio???
-    {
-        if ((*aux)->value == num)//si coincide el numero insertado en el stack retorna 1 q sera error
-        {
-            free_stack(*stack);
-            error();
-        }
-        (*aux) = (*aux)->next;
-    }
-    stack_add_bottom(stack, stack_create(num));
-    *stack = top_stack;
-    return ;
+	ft_printf("Error: Use only numbers\n");
+	free_all((void **)str_splited);
+	free_stack(a);
+	exit(1);
 }
 
-void init_stack(t_stack **a, char **num, int n_num)
+void	add_number(char *char_num, t_stack **stack)
 {
-    int x;
-    int i;
-    int size;
-    char **str_splited; 
+	int		num;
+	t_stack	**aux;
+	t_stack	*top_stack;
 
-    x = 1;
-    while (x < n_num)
-    {
-        size = n_words(num[x], ' ');
-        str_splited = ft_split(num[x], ' ');
-        i = -1;
-        while (++i < size)
-        {
-            if (is_digit(str_splited[i]) == 1)// NO cumple el control de datos
-                error_digit(str_splited, *a);//limpia todo y sale
-            else
-                add_number(str_splited[i], a);
-        }
-        x++;
-        free_all((void **)str_splited);
-    }
+	top_stack = *stack;
+	num = ft_atoi(char_num);
+	if ((*stack) == NULL)
+	{
+		stack_add_bottom(stack, stack_create(num));
+		return ;
+	}
+	aux = stack;
+	while ((*aux)->next != NULL)
+	{
+		if ((*aux)->value == num)
+		{
+			free_stack(*stack);
+			error();
+		}
+		(*aux) = (*aux)->next;
+	}
+	stack_add_bottom(stack, stack_create(num));
+	*stack = top_stack;
+	return ;
 }
 
-
-int main(int argc, char **argv)
+void	init_stack(t_stack **a, char **num, int n_num)
 {
-    t_stack *a;
-    t_stack *b;
+	int		x;
+	int		i;
+	int		size;
+	char	**str_splited;
 
-    a = NULL;
-    b = NULL;
-    if (argc < 2)
-        error();
-    else
-    {
-        init_stack(&a, argv, argc);
-        if (!a)
-            return(0);
-        if (is_sorted(a) == 1)//no esta ordenado
-        {
-            stack_sorter(&a, &b, argv);
-            free_stack(a);
-        }
-        else//esta ordenado
-        {
-            free_stack(a);
-        }
-    }
+	x = 1;
+	while (x < n_num)
+	{
+		size = n_words(num[x], ' ');
+		str_splited = ft_split(num[x], ' ');
+		i = -1;
+		while (++i < size)
+		{
+			if (is_digit(str_splited[i]) == 1)
+				error_digit(str_splited, *a);
+			else
+				add_number(str_splited[i], a);
+		}
+		x++;
+		free_all((void **)str_splited);
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	t_stack	*a;
+	t_stack	*b;
+
+	a = NULL;
+	b = NULL;
+	if (argc < 2)
+		error();
+	else
+	{
+		init_stack(&a, argv, argc);
+		if (!a)
+			return (0);
+		if (is_sorted(a) == 1)
+		{
+			stack_sorter(&a, &b, argv);
+			free_stack(a);
+		}
+		else
+			free_stack(a);
+	}
 }
