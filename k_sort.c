@@ -6,22 +6,22 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 15:42:43 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:13:22 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:49:00 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void	ksort_move(t_stack **a, t_stack **b, int length, int mode)
+void	ksort_move(t_stack **a, t_stack **b, int len, int mode)
 {
 	int	i;
 	int	range;
 
 	i = 0;
 	if (mode == 0)
-		range = square_root(length) * 14 / 10;
+		range = square_root(len) * 14 / 10;
 	else
-		range = length / 2;
+		range = len / 2;
 	while (*a)
 	{
 		if ((*a)->order_pos <= i)
@@ -40,28 +40,28 @@ void	ksort_move(t_stack **a, t_stack **b, int length, int mode)
 	}
 }
 
-void	ksort_reverse(t_stack **a, t_stack **b, int length)
+void	ksort_reverse(t_stack **a, t_stack **b, int len)
 {
 	int	rb_count;
 	int	rrb_count;
 
-	while (length - 1 >= 0)
+	while (len - 1 >= 0)
 	{
-		rb_count = count_r(*b, length - 1);
-		rrb_count = (length + 3) - rb_count;
+		rb_count = count_r(*b, len - 1);
+		rrb_count = (len + 3) - rb_count;
 		if (rb_count <= rrb_count)
 		{
-			while ((*b)->order_pos != length - 1)
+			while ((*b)->order_pos != len - 1)
 				rb(b);
 			pa(a, b);
-			length--;
+			len--;
 		}
 		else
 		{
-			while ((*b)->order_pos != length - 1)
+			while ((*b)->order_pos != len - 1)
 				rrb(b);
 			pa(a, b);
-			length--;
+			len--;
 		}
 	}
 }
@@ -104,19 +104,19 @@ void	sort(t_stack **a, t_stack **b, int *numbers, int mode)
 	ksort_reverse(a, b, len);
 }
 
-int	square_root(int number)
+int	square_root(int n)
 {
-	int	i;
+	int	x;
 
-	if (number < 4)
+	if (n < 4)
 		return (1);
-	i = 2;
-	while (i * i < number)
-		i++;
-	if (i * i > number)
+	x = 2;
+	while (x * x < n)
+		x++;
+	if (x * x > n)
 	{
-		if ((i * i - number) < ((i - 1) * (i - 1) + (-number)))
-			return (i);
+		if ((x * x - n) < ((x - 1) * (x - 1) + (-n)))
+			return (x);
 	}
-	return (i - 1);
+	return (x - 1);
 }

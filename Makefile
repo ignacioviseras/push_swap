@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/09/19 18:49:44 by igvisera         ###   ########.fr        #
+#    Updated: 2024/09/21 17:27:03 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,11 @@ SRCS		=	algorit.c \
 				info_stack.c \
 				push_stack.c \
 				push_swap.c \
-				reverse_rotate_stack.c \
-				rotate_stack.c \
+				rotates_stack.c \
 				stack_actions.c \
 				swap_stack.c \
 				k_sort.c \
+				k_sort_utils.c \
 
 
 OBJS		=	${SRCS:.c=.o} \

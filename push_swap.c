@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:16:45 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:26:01 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 void	error(void)
 {
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(1);
 }
 
 void	error_digit(char **str_splited, t_stack *a)
 {
-	ft_printf("Error: Use only numbers\n");
+	write(2, "Error: Use only numbers\n", 24);
 	free_all((void **)str_splited);
 	free_stack(a);
 	exit(1);

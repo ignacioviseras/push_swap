@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/21 15:43:32 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/21 17:49:43 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ void				free_parse(char **char_nums, int *numbers);
 //ksort
 void				sort(t_stack **a, t_stack **b, int *numbers, int mode);
 void				insertion_sort(int array[], int n);
-void				ksort_move(t_stack **a, t_stack **b, int length, int x);
-void				ksort_reverse(t_stack **a, t_stack **b, int length);
+void				ksort_move(t_stack **a, t_stack **b, int len, int x);
+void				ksort_reverse(t_stack **a, t_stack **b, int len);
 int					square_root(int number);
 int					*parse(char **argv);
 int					index_of(int n, int *arr);
