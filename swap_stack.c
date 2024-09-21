@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:52:46 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:05:57 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:43:26 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,44 +25,4 @@ void	sa(t_stack **a)
 	second->next = first;
 	(*a) = second;
 	write(1, "sa\n", 3);
-}
-
-void	sb(t_stack **b)
-{
-	t_stack	*first;
-	t_stack	*second;
-
-	if (!b || !(*b) || !(*b)->next)
-		return ;
-	first = *b;
-	second = (*b)->next;
-	first->next = second->next;
-	second->next = first;
-	*b = second;
-	write(1, "sb\n", 3);
-}
-
-void	ss(t_stack **a, t_stack **b)
-{
-	t_stack	*first_a;
-	t_stack	*second_a;
-	t_stack	*first_b;
-	t_stack	*second_b;
-
-	if ((!a || !(*a) || !(*a)->next) && (!b || !(*b) || !(*b)->next))
-		return ;
-	if ((a && (*a) && (*a)->next) && (b && (*b) && (*b)->next))
-	{
-		first_b = *b;
-		second_b = (*b)->next;
-		first_a = *a;
-		second_a = (*a)->next;
-		first_b->next = second_b->next;
-		second_b->next = first_b;
-		*b = second_b;
-		first_a->next = second_a->next;
-		second_a->next = first_a;
-		*a = second_a;
-		write(1, "ss\n", 3);
-	}
 }

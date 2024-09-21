@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 18:54:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:11:52 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:41:57 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,4 @@ void rrb(t_stack **b)
 	last_b->next = *b;
 	*b = last_b;
     write(1, "rrb\n", 4);
-}
-
-void rrr(t_stack **a, t_stack **b)
-{
-	if ((!a || !(*a) || !(*a)->next) && (!b || !(*b) || !(*b)->next))
-        return;
-
-    if (a && *a && (*a)->next) {
-        t_stack *last_a = get_last(*a);
-        t_stack *second_last_a = *a;
-        while (second_last_a->next->next != NULL)
-            second_last_a = second_last_a->next;
-        second_last_a->next = NULL;
-        last_a->next = *a;
-        *a = last_a;
-    }
-    if (b && *b && (*b)->next) {
-        t_stack *last_b = get_last(*b);
-        t_stack *second_last_b = *b;
-        while (second_last_b->next->next != NULL)
-            second_last_b = second_last_b->next;
-        second_last_b->next = NULL;
-        last_b->next = *b;
-        *b = last_b;
-    }
-    write(1, "rrr\n", 4);
 }
