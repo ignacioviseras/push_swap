@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 15:49:25 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/21 17:22:02 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:10:16 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ int	index_of(int n, int *arr)
 	return (i);
 }
 
-int	count_r(t_stack *stack, int index)
+int	rotate_cnt(t_stack *stack, int index)
 {
-	int	count;
+	int	counter;
 
-	count = 0;
+	counter = 0;
 	while (stack && stack->order_pos != index)
 	{
 		stack = stack->next;
-		count++;
+		counter++;
 	}
-	return (count);
+	return (counter);
 }

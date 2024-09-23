@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: igvisera <igvisera@student.42madrid.com>   +#+  +:+       +#+         #
+#    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:42:22 by igvisera          #+#    #+#              #
-#    Updated: 2024/05/29 20:57:19 by igvisera         ###   ########.fr        #
+#    Updated: 2024/09/23 19:57:24 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ PRINTF	     	=	$(addprefix $(PATH_PRINTF), $(PRINTF_SRC))
 SRCS			=	is_digit.c \
 
 BASICS_SRC		=	ft_atoi.c \
+					ft_atol.c \
 					ft_strlen.c \
 					ft_split.c \
 					ft_bzero.c \

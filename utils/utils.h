@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:36 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 17:57:43 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:57:08 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int		is_digit(char *s);
 
 // BASICS
 int		ft_atoi(char *nptr);
+long	ft_atol(const char *nptr);
 size_t	ft_strlen(const char *s);
 void	free_all(void **str);
 int		n_words(char const *s, char c);

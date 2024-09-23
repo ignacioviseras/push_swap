@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 15:42:43 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/21 17:49:00 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/23 18:10:56 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ksort_reverse(t_stack **a, t_stack **b, int len)
 
 	while (len - 1 >= 0)
 	{
-		rb_count = count_r(*b, len - 1);
+		rb_count = rotate_cnt(*b, len - 1);
 		rrb_count = (len + 3) - rb_count;
 		if (rb_count <= rrb_count)
 		{

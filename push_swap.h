@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:43:32 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/21 17:49:43 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/23 19:56:46 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,12 @@ typedef struct s_stack
 }					t_stack;
 
 void				init_stack(t_stack **a, char **num, int n_num);
+int					repeated_num(t_stack **stack, int num);
 t_stack				*stack_create(int value);
 void				stack_add_bottom(t_stack **stack, t_stack *new_stack);
+void				add_number(char *char_num, t_stack **stack);
 void				error(void);
+void				error_digit(char **str_splited, t_stack *a);
 
 //frees
 void				free_all(void **str);
@@ -42,7 +45,7 @@ void				ksort_reverse(t_stack **a, t_stack **b, int len);
 int					square_root(int number);
 int					*parse(char **argv);
 int					index_of(int n, int *arr);
-int					count_r(t_stack *stack, int index);
+int					rotate_cnt(t_stack *stack, int index);
 
 //info_stack
 t_stack				*get_last(t_stack *stack);

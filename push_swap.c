@@ -6,48 +6,44 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/21 17:26:01 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/23 20:05:27 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void	error(void)
+int	repeated_num(t_stack **stack, int num)
 {
-	write(2, "Error\n", 6);
-	exit(1);
-}
+	t_stack	**aux;
 
-void	error_digit(char **str_splited, t_stack *a)
-{
-	write(2, "Error: Use only numbers\n", 24);
-	free_all((void **)str_splited);
-	free_stack(a);
-	exit(1);
+	aux = stack;
+	while ((*aux)->next != NULL)
+	{
+		if ((*aux)->value == num)
+			return (1);
+		(*aux) = (*aux)->next;
+	}
+	return (0);
 }
 
 void	add_number(char *char_num, t_stack **stack)
 {
-	int		num;
-	t_stack	**aux;
+	long	num;
 	t_stack	*top_stack;
 
 	top_stack = *stack;
-	num = ft_atoi(char_num);
+	num = ft_atol(char_num);
+	if (num == (long)INT_MAX + 1)
+		error();
 	if ((*stack) == NULL)
 	{
 		stack_add_bottom(stack, stack_create(num));
 		return ;
 	}
-	aux = stack;
-	while ((*aux)->next != NULL)
+	if (repeated_num(stack, num) == 1)
 	{
-		if ((*aux)->value == num)
-		{
-			free_stack(*stack);
-			error();
-		}
-		(*aux) = (*aux)->next;
+		free_stack(*stack);
+		error();
 	}
 	stack_add_bottom(stack, stack_create(num));
 	*stack = top_stack;

@@ -6,7 +6,7 @@
 #    By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/03 18:40:55 by igvisera          #+#    #+#              #
-#    Updated: 2024/09/21 17:27:03 by igvisera         ###   ########.fr        #
+#    Updated: 2024/09/23 19:54:58 by igvisera         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ SRCS		=	algorit.c \
 				swap_stack.c \
 				k_sort.c \
 				k_sort_utils.c \
+				errors.c \
 
 
 OBJS		=	${SRCS:.c=.o} \

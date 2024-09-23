@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/19 21:58:11 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/23 19:35:49 by igvisera         ###   ########.fr       */
+/*   Created: 2024/09/23 19:35:22 by igvisera          #+#    #+#             */
+/*   Updated: 2024/09/23 19:35:43 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../utils.h"
 
-int	ft_atoi(char *nptr)
+long	ft_atol(const char *nptr)
 {
-	long	index;
-	int		sign;
+	int		index;
+	long	sing;
 	long	num;
 
+	sing = 1;
 	index = 0;
-	sign = 1;
 	num = 0;
-	while (nptr[index] == ' ' || nptr[index] == '\t' || nptr[index] == '\n')
+	while ((nptr[index] >= 9 && nptr[index] <= 13) || (nptr[index] == 32))
 		index++;
-	while (nptr[index] == '+' || nptr[index] == '-')
+	if (nptr[index] == '-')
 	{
-		if (nptr[index + 1] == '+' || nptr[index + 1] == '-')
-			return (0);
-		if (nptr[index] == '-')
-			sign *= -1;
+		sing = -1;
 		index++;
 	}
-	while (nptr[index] < '0' && nptr[index] > '9')
+	else if (nptr[index] == '+')
 		index++;
 	while (nptr[index] >= '0' && nptr[index] <= '9')
+	{
 		num = num * 10 + (nptr[index++] - '0');
-	num *= sign;
-	if (num > INT_MAX || num < INT_MIN)
-		error();
-	return (num);
+		if ((num * sing) < INT_MIN || (num * sing) > INT_MAX)
+			return ((long)INT_MAX + 1);
+	}
+	return (num * sing);
 }
