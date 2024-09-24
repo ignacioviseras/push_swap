@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 19:23:42 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:01:02 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/24 19:09:06 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	print_stack(t_stack *stack)
 
 	i = 1;
 	if (!stack)
-		printf("Sin contenido\n");
+		ft_printf("Sin contenido\n");
 	while (stack != NULL)
 	{
-		printf("%d. valor='%d, order_pos='%d\n", i, stack->value,
+		ft_printf("%d. valor='%d, order_pos='%d\n", i, stack->value,
 			stack->order_pos);
 		stack = stack->next;
 		i++;
