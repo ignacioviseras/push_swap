@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 18:41:31 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/23 20:05:27 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/24 18:03:00 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 int	repeated_num(t_stack **stack, int num)
 {
 	t_stack	**aux;
+	t_stack	*top_stack;
 
 	aux = stack;
-	while ((*aux)->next != NULL)
+	top_stack = *stack;
+	while (*aux != NULL)
 	{
 		if ((*aux)->value == num)
 			return (1);
 		(*aux) = (*aux)->next;
 	}
+	*stack = top_stack;
 	return (0);
 }
 
@@ -30,6 +33,7 @@ void	add_number(char *char_num, t_stack **stack)
 {
 	long	num;
 	t_stack	*top_stack;
+	t_stack	**aux;
 
 	top_stack = *stack;
 	num = ft_atol(char_num);
@@ -40,7 +44,8 @@ void	add_number(char *char_num, t_stack **stack)
 		stack_add_bottom(stack, stack_create(num));
 		return ;
 	}
-	if (repeated_num(stack, num) == 1)
+	aux = stack;
+	if (repeated_num(aux, num) == 1)
 	{
 		free_stack(*stack);
 		error();
@@ -88,7 +93,7 @@ int	main(int argc, char **argv)
 	{
 		init_stack(&a, argv, argc);
 		if (!a)
-			return (0);
+			error();
 		if (is_sorted(a) == 1)
 		{
 			stack_sorter(&a, &b, argv);

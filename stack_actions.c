@@ -6,7 +6,7 @@
 /*   By: igvisera <igvisera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 19:34:17 by igvisera          #+#    #+#             */
-/*   Updated: 2024/09/20 18:10:52 by igvisera         ###   ########.fr       */
+/*   Updated: 2024/09/24 17:42:55 by igvisera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,10 @@ t_stack	*stack_create(int value)
 
 	stack = malloc(sizeof(t_stack));
 	if (!stack)
+	{
+		free(stack);
 		return (NULL);
+	}
 	stack->value = value;
 	stack->order_pos = 0;
 	stack->next = NULL;
